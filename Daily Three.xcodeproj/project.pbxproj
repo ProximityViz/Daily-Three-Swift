@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339591A884508008C0B1B /* AppDelegate.swift */; };
+		EC43395C1A884508008C0B1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43395B1A884508008C0B1B /* ViewController.swift */; };
+		EC43395F1A884508008C0B1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC43395D1A884508008C0B1B /* Main.storyboard */; };
+		EC4339611A884508008C0B1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4339601A884508008C0B1B /* Images.xcassets */; };
+		EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4339621A884508008C0B1B /* LaunchScreen.xib */; };
+		EC4339701A884508008C0B1B /* Daily_ThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC43396A1A884508008C0B1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC43394C1A884508008C0B1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC4339531A884508008C0B1B;
+			remoteInfo = "Daily Three";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC4339541A884508008C0B1B /* Daily Three.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Three.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC4339581A884508008C0B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC4339591A884508008C0B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC43395B1A884508008C0B1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC43395E1A884508008C0B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC4339601A884508008C0B1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC4339631A884508008C0B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EC4339691A884508008C0B1B /* Daily ThreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily ThreeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC43396E1A884508008C0B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_ThreeTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC4339511A884508008C0B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4339661A884508008C0B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC43394B1A884508008C0B1B = {
+			isa = PBXGroup;
+			children = (
+				EC4339561A884508008C0B1B /* Daily Three */,
+				EC43396C1A884508008C0B1B /* Daily ThreeTests */,
+				EC4339551A884508008C0B1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC4339551A884508008C0B1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC4339541A884508008C0B1B /* Daily Three.app */,
+				EC4339691A884508008C0B1B /* Daily ThreeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC4339561A884508008C0B1B /* Daily Three */ = {
+			isa = PBXGroup;
+			children = (
+				EC4339591A884508008C0B1B /* AppDelegate.swift */,
+				EC43395B1A884508008C0B1B /* ViewController.swift */,
+				EC43395D1A884508008C0B1B /* Main.storyboard */,
+				EC4339601A884508008C0B1B /* Images.xcassets */,
+				EC4339621A884508008C0B1B /* LaunchScreen.xib */,
+				EC4339571A884508008C0B1B /* Supporting Files */,
+			);
+			path = "Daily Three";
+			sourceTree = "<group>";
+		};
+		EC4339571A884508008C0B1B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC4339581A884508008C0B1B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC43396C1A884508008C0B1B /* Daily ThreeTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */,
+				EC43396D1A884508008C0B1B /* Supporting Files */,
+			);
+			path = "Daily ThreeTests";
+			sourceTree = "<group>";
+		};
+		EC43396D1A884508008C0B1B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC43396E1A884508008C0B1B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC4339531A884508008C0B1B /* Daily Three */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC4339731A884508008C0B1B /* Build configuration list for PBXNativeTarget "Daily Three" */;
+			buildPhases = (
+				EC4339501A884508008C0B1B /* Sources */,
+				EC4339511A884508008C0B1B /* Frameworks */,
+				EC4339521A884508008C0B1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Daily Three";
+			productName = "Daily Three";
+			productReference = EC4339541A884508008C0B1B /* Daily Three.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC4339681A884508008C0B1B /* Daily ThreeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC4339761A884508008C0B1B /* Build configuration list for PBXNativeTarget "Daily ThreeTests" */;
+			buildPhases = (
+				EC4339651A884508008C0B1B /* Sources */,
+				EC4339661A884508008C0B1B /* Frameworks */,
+				EC4339671A884508008C0B1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC43396B1A884508008C0B1B /* PBXTargetDependency */,
+			);
+			name = "Daily ThreeTests";
+			productName = "Daily ThreeTests";
+			productReference = EC4339691A884508008C0B1B /* Daily ThreeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC43394C1A884508008C0B1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Proximity Viz LLC";
+				TargetAttributes = {
+					EC4339531A884508008C0B1B = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					EC4339681A884508008C0B1B = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = EC4339531A884508008C0B1B;
+					};
+				};
+			};
+			buildConfigurationList = EC43394F1A884508008C0B1B /* Build configuration list for PBXProject "Daily Three" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC43394B1A884508008C0B1B;
+			productRefGroup = EC4339551A884508008C0B1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC4339531A884508008C0B1B /* Daily Three */,
+				EC4339681A884508008C0B1B /* Daily ThreeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC4339521A884508008C0B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC43395F1A884508008C0B1B /* Main.storyboard in Resources */,
+				EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */,
+				EC4339611A884508008C0B1B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4339671A884508008C0B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC4339501A884508008C0B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC43395C1A884508008C0B1B /* ViewController.swift in Sources */,
+				EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC4339651A884508008C0B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4339701A884508008C0B1B /* Daily_ThreeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC43396B1A884508008C0B1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC4339531A884508008C0B1B /* Daily Three */;
+			targetProxy = EC43396A1A884508008C0B1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC43395D1A884508008C0B1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC43395E1A884508008C0B1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC4339621A884508008C0B1B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC4339631A884508008C0B1B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC4339711A884508008C0B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC4339721A884508008C0B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC4339741A884508008C0B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Daily Three/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC4339751A884508008C0B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Daily Three/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EC4339771A884508008C0B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Daily ThreeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daily Three.app/Daily Three";
+			};
+			name = Debug;
+		};
+		EC4339781A884508008C0B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Daily ThreeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daily Three.app/Daily Three";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC43394F1A884508008C0B1B /* Build configuration list for PBXProject "Daily Three" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4339711A884508008C0B1B /* Debug */,
+				EC4339721A884508008C0B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC4339731A884508008C0B1B /* Build configuration list for PBXNativeTarget "Daily Three" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4339741A884508008C0B1B /* Debug */,
+				EC4339751A884508008C0B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC4339761A884508008C0B1B /* Build configuration list for PBXNativeTarget "Daily ThreeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4339771A884508008C0B1B /* Debug */,
+				EC4339781A884508008C0B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC43394C1A884508008C0B1B /* Project object */;
+}
