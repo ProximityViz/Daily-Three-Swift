@@ -8,14 +8,25 @@
 
 import UIKit
 
+var currentItemIndex:Int!
+var currentDateData : (titles:[String], details:[String])?
+
 class ItemsTVC: UITableViewController {
     
     private var listData = [DateData]()
-    private var currentDateData : (titles:[String], details:[String])?
-    private var currentDateIndex = 0
-    private var currentItemIndex = 0
-
+    
     @IBOutlet var dataTable: UITableView!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        listData = ListData.mainData().getDateList()
+        
+        self.showDataForDate(currentDateIndex)
+        
+        tableView.reloadData()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,50 +36,26 @@ class ItemsTVC: UITableViewController {
         
         currentItemIndex = 0
         
-        listData = ListData.mainData().getDateList()
-        
         dataTable.delegate = self
         dataTable.dataSource = self
         dataTable.backgroundView = nil
-        view.addSubview(dataTable!)
-        
-        self.showDataForItem(currentItemIndex)
     }
     
-    func showDataForItem(itemIndex: Int) {
+    func showDataForDate(dateIndex: Int) {
         // defensive
-        if (itemIndex < listData.count && itemIndex > -1) {
-            let item = listData[itemIndex]
-            currentDateData = item.dde_tableRepresentation()
+        if (dateIndex < listData.count && dateIndex > -1) {
+            let date = listData[dateIndex]
+            currentDateData = date.dde_tableRepresentation()
         } else {
             currentDateData = nil
         }
-        dataTable!.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
-
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete method implementation.
-//        // Return the number of rows in the section.
-//        return 0
-//    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -105,16 +92,6 @@ class ItemsTVC: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ItemsTVC: UITableViewDataSource {
@@ -138,6 +115,12 @@ extension ItemsTVC: UITableViewDataSource {
         }
         
         return cell
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        currentItemIndex = indexPath.row
         
     }
     

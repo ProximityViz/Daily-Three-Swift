@@ -90,10 +90,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="os5-Ng-K8g">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="sLH-vv-C9E" detailTextLabel="c2V-vR-FuB" style="IBUITableViewCellStyleValue1" id="os5-Ng-K8g">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="os5-Ng-K8g" id="gOl-cE-Q0L">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sLH-vv-C9E">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c2V-vR-FuB">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="jnR-Za-Qnl" kind="show" id="vqo-YU-KDn"/>
@@ -126,18 +140,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKz-z2-Xfv">
-                                <rect key="frame" x="16" y="72" width="97" height="30"/>
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="i02-bd-cqd"/>
+                                    <constraint firstAttribute="height" constant="30" id="zrf-c9-7aq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="i02-bd-cqd"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xba-yU-ooM">
-                                <rect key="frame" x="16" y="110" width="240" height="128"/>
+                                <rect key="frame" x="16" y="110" width="568" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="OOM-JA-rbI"/>
+                                    <constraint firstAttribute="height" constant="128" id="nnb-oZ-Zq5"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -146,13 +166,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0CY-6M-u8N" firstAttribute="top" secondItem="Xba-yU-ooM" secondAttribute="bottom" constant="362" id="415-iZ-7Am"/>
-                            <constraint firstItem="RKz-z2-Xfv" firstAttribute="leading" secondItem="Xba-yU-ooM" secondAttribute="leading" id="8X1-uZ-326"/>
-                            <constraint firstItem="RKz-z2-Xfv" firstAttribute="top" secondItem="utL-cx-KET" secondAttribute="bottom" constant="8" symbolic="YES" id="HzF-Jh-WEt"/>
-                            <constraint firstItem="RKz-z2-Xfv" firstAttribute="leading" secondItem="97O-lV-GEn" secondAttribute="leadingMargin" id="YhD-IB-XGz"/>
-                            <constraint firstItem="Xba-yU-ooM" firstAttribute="top" secondItem="RKz-z2-Xfv" secondAttribute="bottom" constant="8" symbolic="YES" id="jWq-qt-WVH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RKz-z2-Xfv" secondAttribute="trailing" id="A6w-JT-VME"/>
+                            <constraint firstItem="Xba-yU-ooM" firstAttribute="top" secondItem="RKz-z2-Xfv" secondAttribute="bottom" constant="8" id="BUv-Wu-t4z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xba-yU-ooM" secondAttribute="trailing" id="MQf-4r-bgt"/>
+                            <constraint firstItem="RKz-z2-Xfv" firstAttribute="leading" secondItem="97O-lV-GEn" secondAttribute="leadingMargin" id="OgD-Ks-yok"/>
+                            <constraint firstItem="Xba-yU-ooM" firstAttribute="leading" secondItem="97O-lV-GEn" secondAttribute="leadingMargin" id="azW-zg-91f"/>
+                            <constraint firstItem="RKz-z2-Xfv" firstAttribute="top" secondItem="utL-cx-KET" secondAttribute="bottom" constant="8" id="qcw-9K-eym"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="itemDetail" destination="Xba-yU-ooM" id="JIw-NI-eXF"/>
+                        <outlet property="itemTitle" destination="RKz-z2-Xfv" id="8O7-fN-lF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXQ-DP-qdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

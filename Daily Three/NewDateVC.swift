@@ -23,13 +23,7 @@ class NewDateVC: UIViewController {
     
     func saveDate() {
 
-//         create DateData with datePicker.date
-//        ListData.mainData().addDate(datePicker.date)
-        
-        //        DateData.new()
-        var temp = DateData(unformattedDate: datePicker.date)
-        // does this need to be added to ListData or will it do that automatically?
-        ListData.mainData().addDate(temp)
+        ListData.mainData().addDate(DateData(unformattedDate: datePicker.date))
         
         // dismiss VC
         // FIXME: should there be a completion block?
