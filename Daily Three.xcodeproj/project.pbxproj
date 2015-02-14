@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
+		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
 		EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339591A884508008C0B1B /* AppDelegate.swift */; };
-		EC43395C1A884508008C0B1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43395B1A884508008C0B1B /* ViewController.swift */; };
 		EC43395F1A884508008C0B1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC43395D1A884508008C0B1B /* Main.storyboard */; };
 		EC4339611A884508008C0B1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4339601A884508008C0B1B /* Images.xcassets */; };
 		EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4339621A884508008C0B1B /* LaunchScreen.xib */; };
 		EC4339701A884508008C0B1B /* Daily_ThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */; };
+		EC43397B1A88453B008C0B1B /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397A1A88453B008C0B1B /* ListData.swift */; };
+		EC43397D1A884A09008C0B1B /* DatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397C1A884A09008C0B1B /* DatesTVC.swift */; };
+		EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397E1A884A4C008C0B1B /* NewDateVC.swift */; };
+		EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339801A884A66008C0B1B /* ItemsTVC.swift */; };
+		EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339821A884A7A008C0B1B /* EditItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC3A13091A8E7ADC00A0EB44 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
+		EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		EC4339541A884508008C0B1B /* Daily Three.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Three.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4339581A884508008C0B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4339591A884508008C0B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC43395B1A884508008C0B1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC43395E1A884508008C0B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4339601A884508008C0B1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC4339631A884508008C0B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC4339691A884508008C0B1B /* Daily ThreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily ThreeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC43396E1A884508008C0B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_ThreeTests.swift; sourceTree = "<group>"; };
+		EC43397A1A88453B008C0B1B /* ListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		EC43397C1A884A09008C0B1B /* DatesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatesTVC.swift; path = ../DatesTVC.swift; sourceTree = "<group>"; };
+		EC43397E1A884A4C008C0B1B /* NewDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDateVC.swift; sourceTree = "<group>"; };
+		EC4339801A884A66008C0B1B /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
+		EC4339821A884A7A008C0B1B /* EditItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +89,12 @@
 		EC4339561A884508008C0B1B /* Daily Three */ = {
 			isa = PBXGroup;
 			children = (
-				EC4339591A884508008C0B1B /* AppDelegate.swift */,
-				EC43395B1A884508008C0B1B /* ViewController.swift */,
+				EC4339791A88452B008C0B1B /* Models */,
+				EC43397C1A884A09008C0B1B /* DatesTVC.swift */,
+				EC43397E1A884A4C008C0B1B /* NewDateVC.swift */,
+				EC4339801A884A66008C0B1B /* ItemsTVC.swift */,
+				EC4339821A884A7A008C0B1B /* EditItemVC.swift */,
 				EC43395D1A884508008C0B1B /* Main.storyboard */,
-				EC4339601A884508008C0B1B /* Images.xcassets */,
-				EC4339621A884508008C0B1B /* LaunchScreen.xib */,
 				EC4339571A884508008C0B1B /* Supporting Files */,
 			);
 			path = "Daily Three";
@@ -90,6 +103,9 @@
 		EC4339571A884508008C0B1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EC4339601A884508008C0B1B /* Images.xcassets */,
+				EC4339621A884508008C0B1B /* LaunchScreen.xib */,
+				EC4339591A884508008C0B1B /* AppDelegate.swift */,
 				EC4339581A884508008C0B1B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -112,6 +128,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EC4339791A88452B008C0B1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC43397A1A88453B008C0B1B /* ListData.swift */,
+				EC3A13091A8E7ADC00A0EB44 /* DateData.swift */,
+				EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +148,7 @@
 				EC4339501A884508008C0B1B /* Sources */,
 				EC4339511A884508008C0B1B /* Frameworks */,
 				EC4339521A884508008C0B1B /* Resources */,
+				EC4339841A884C4B008C0B1B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,13 +234,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EC4339841A884C4B008C0B1B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EC4339501A884508008C0B1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC43395C1A884508008C0B1B /* ViewController.swift in Sources */,
+				EC43397B1A88453B008C0B1B /* ListData.swift in Sources */,
+				EC43397D1A884A09008C0B1B /* DatesTVC.swift in Sources */,
+				EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */,
 				EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */,
+				EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */,
+				EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */,
+				EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */,
+				EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +454,7 @@
 				EC4339751A884508008C0B1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC4339761A884508008C0B1B /* Build configuration list for PBXNativeTarget "Daily ThreeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +463,7 @@
 				EC4339781A884508008C0B1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
