@@ -33,9 +33,6 @@ class PersistencyManager: NSObject {
     
     func addDate(dateData: DateData) {
         dateList.append(dateData)
-        for date in dateList {
-            println(date.unformattedDate)
-        }
         dateList.sort({ $0.unformattedDate.timeIntervalSinceNow > $1.unformattedDate.timeIntervalSinceNow })
         
         saveDates(dateList)

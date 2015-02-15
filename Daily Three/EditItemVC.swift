@@ -13,6 +13,8 @@ class EditItemVC: UIViewController {
     @IBOutlet weak var itemTitle: UITextField!
     @IBOutlet weak var itemDetail: UITextView!
     
+    @IBOutlet weak var detailBottomConstraint: NSLayoutConstraint!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
@@ -34,10 +36,36 @@ class EditItemVC: UIViewController {
         itemDetail.layer.borderColor = UIColor(red:0.9, green:0.9, blue:0.9, alpha:1).CGColor
         itemDetail.layer.cornerRadius = 5
         itemDetail.clipsToBounds = true
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                detailBottomConstraint.constant = keyboardSize.height + 8
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        detailBottomConstraint.constant = 16
+    }
+    
+    // minimize keyboard on tap outside
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        view.endEditing(true)
     }
     
     func saveItem() {
-        println("item saved")
         
         // edit DateData
         let dateData = ListData.mainData().getDateList()[currentDateIndex]

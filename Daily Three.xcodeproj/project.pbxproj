@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */; };
 		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
 		EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339591A884508008C0B1B /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EC3A13091A8E7ADC00A0EB44 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
 		EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		EC4339541A884508008C0B1B /* Daily Three.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Three.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC13B8611A902614000D9FC6 /* Aesthetics */ = {
+			isa = PBXGroup;
+			children = (
+				EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */,
+			);
+			name = Aesthetics;
+			sourceTree = "<group>";
+		};
 		EC43394B1A884508008C0B1B = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				EC4339791A88452B008C0B1B /* Models */,
+				EC13B8611A902614000D9FC6 /* Aesthetics */,
 				EC43397C1A884A09008C0B1B /* DatesTVC.swift */,
 				EC43397E1A884A4C008C0B1B /* NewDateVC.swift */,
 				EC4339801A884A66008C0B1B /* ItemsTVC.swift */,
@@ -258,6 +269,7 @@
 				EC43397B1A88453B008C0B1B /* ListData.swift in Sources */,
 				EC43397D1A884A09008C0B1B /* DatesTVC.swift in Sources */,
 				EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */,
+				EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */,
 				EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */,
 				EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */,
 				EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */,

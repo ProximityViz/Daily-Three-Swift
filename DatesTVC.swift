@@ -31,9 +31,6 @@ class DatesTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // FIXME: this code is from a tutorial and may not be what I want
-        self.navigationController?.navigationBar.translucent = false
-        
         currentDateIndex = 0
         
     }
@@ -82,7 +79,7 @@ class DatesTVC: UITableViewController {
             
         }
         
-        var completeAction = UITableViewRowAction(style: .Normal, title: "☑✓✔") { (action, indexPath) -> Void in
+        var completeAction = UITableViewRowAction(style: .Normal, title: "☑") { (action, indexPath) -> Void in
             
             tableView.editing = false
             

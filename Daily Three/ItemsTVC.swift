@@ -33,8 +33,7 @@ class ItemsTVC: UITableViewController {
         
         title = "List"
         
-        // FIXME: this code is from a tutorial and may not be what I want
-        self.navigationController?.navigationBar.translucent = false
+        tableView.rowHeight = (view.frame.size.height - 63) / 3
         
         currentItemIndex = 0
         
@@ -75,6 +74,8 @@ extension ItemsTVC: UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         cell.accessoryView?.frame = CGRectMake(0, 0, 44, 44)
         
         if let dateData = currentDateData {
@@ -107,7 +108,7 @@ extension ItemsTVC: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
-        var completeAction = UITableViewRowAction(style: .Normal, title: "☑✓✔") { (action, indexPath) -> Void in
+        var completeAction = UITableViewRowAction(style: .Normal, title: "☑") { (action, indexPath) -> Void in
             
             tableView.editing = false
             
