@@ -42,6 +42,9 @@ class ItemsTVC: UITableViewController {
         dataTable.delegate = self
         dataTable.dataSource = self
         dataTable.backgroundView = nil
+        
+        tableView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "longPressGestureRecognized:"))
+        
     }
     
     func showDataForDate(dateIndex: Int) {
@@ -58,6 +61,113 @@ class ItemsTVC: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+  
+    func longPressGestureRecognized(sender: UILongPressGestureRecognizer) {
+        
+        let longPress = sender
+        
+        let state = sender.state
+        
+        let location = longPress.locationInView(tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(location)
+        
+        var snapshot = UIImageView()
+        var sourceIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        
+        switch state {
+        
+        case .Began:
+        
+            if (indexPath != nil) {
+                sourceIndexPath = indexPath!
+                
+                if let cell = tableView.cellForRowAtIndexPath(indexPath!) {
+                
+                    snapshot = customSnapshotFromView(cell)
+                    
+                    snapshot.center = cell.center
+                    snapshot.alpha = 0
+                    
+                    tableView.addSubview(snapshot)
+                    UIView.animateWithDuration(0.25, animations: { () -> Void in
+                        
+                        cell.center.y = location.y
+                        snapshot.center = cell.center
+                        snapshot.transform = CGAffineTransformMakeScale(1.05, 1.05)
+                        snapshot.alpha = 0.98
+                        
+                        cell.alpha = 0
+                        
+                    }, completion: { (finished) -> Void in
+                        
+                        cell.hidden = true
+                        
+                    })
+                }
+                
+            }
+            
+        case .Changed:
+            
+            var center = snapshot.center
+            center.y = location.y
+            
+            // is destination valid and different from source?
+            if (indexPath != nil && indexPath != sourceIndexPath) {
+                
+                // update data source
+                
+                // move the rows
+                tableView.moveRowAtIndexPath(sourceIndexPath, toIndexPath: indexPath!)
+                
+                // update sourceIndexPath
+                sourceIndexPath = indexPath!
+                
+            }
+            
+        default:
+            
+            // clean up
+            var cell:UITableViewCell = tableView.cellForRowAtIndexPath(sourceIndexPath)!
+            cell.hidden = false
+            cell.alpha = 0
+            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                
+                snapshot.center = cell.center
+                snapshot.transform = CGAffineTransformIdentity
+                snapshot.alpha = 0
+                
+                cell.alpha = 1
+                
+            }, completion: { (finished) -> Void in
+                
+                sourceIndexPath = NSIndexPath()
+                snapshot.removeFromSuperview()
+                snapshot = UIImageView()
+                
+            })
+            
+        }
+        
+        
+    }
+    
+    func customSnapshotFromView(inputView: UIView) -> UIImageView {
+        
+        UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0)
+        inputView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let snapshot = UIImageView(image: image)
+        snapshot.layer.masksToBounds = false
+        snapshot.layer.cornerRadius = 0
+        snapshot.layer.shadowOffset = CGSizeMake(-5, 0)
+        snapshot.layer.shadowRadius = 5
+        snapshot.layer.shadowOpacity = 0.4
+        
+        return snapshot
     }
 
 }
