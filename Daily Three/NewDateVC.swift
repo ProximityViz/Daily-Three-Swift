@@ -17,6 +17,8 @@ class NewDateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "New Date"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("saveDate"))
 
     }

@@ -12,29 +12,37 @@ import UIKit
 
 extension DateData {
     // date data extension
-    func dde_tableRepresentation() -> (titles:[String], details:[String]) {
-        return ([topTitle, middleTitle, bottomTitle], [topDetail, middleDetail, bottomDetail])
+    func dde_tableRepresentation() -> (titles:[String], details:[String], done:[Bool]) {
+        return ([topTitle, middleTitle, bottomTitle], [topDetail, middleDetail, bottomDetail], [topDone, middleDone, bottomDone])
     }
 }
 
 class DateData: NSObject {
     
+    var done : Bool!
     var topTitle : String!
     var topDetail : String!
+    var topDone : Bool!
     var middleTitle : String!
     var middleDetail : String!
+    var middleDone : Bool!
     var bottomTitle : String!
     var bottomDetail : String!
+    var bottomDone : Bool!
     var formattedDate : String!
-    var unformattedDate: NSDate!
+    var unformattedDate : NSDate!
     
     required init(coder aDecoder: NSCoder) {
+        done = aDecoder.decodeObjectForKey("done") as Bool
         topTitle = aDecoder.decodeObjectForKey("topTitle") as String
         topDetail = aDecoder.decodeObjectForKey("topDetail") as String
+        topDone = aDecoder.decodeObjectForKey("topDone") as Bool
         middleTitle = aDecoder.decodeObjectForKey("middleTitle") as String
         middleDetail = aDecoder.decodeObjectForKey("middleDetail") as String
+        middleDone = aDecoder.decodeObjectForKey("middleDone") as Bool
         bottomTitle = aDecoder.decodeObjectForKey("bottomTitle") as String
         bottomDetail = aDecoder.decodeObjectForKey("bottomDetail") as String
+        bottomDone = aDecoder.decodeObjectForKey("bottomDone") as Bool
         formattedDate = aDecoder.decodeObjectForKey("formattedDate") as String
         unformattedDate = aDecoder.decodeObjectForKey("unformattedDate") as NSDate
     }
@@ -42,24 +50,32 @@ class DateData: NSObject {
     override init() {
         super.init()
         
+        done = false
         topTitle = ""
         topDetail = ""
+        topDone = false
         middleTitle = ""
         middleDetail = ""
+        middleDone = false
         bottomTitle = ""
         bottomDetail = ""
+        bottomDone = false
         formattedDate = ""
         unformattedDate = NSDate()
         
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(done, forKey: "done")
         aCoder.encodeObject(topTitle, forKey: "topTitle")
         aCoder.encodeObject(topDetail, forKey: "topDetail")
+        aCoder.encodeObject(topDone, forKey: "topDone")
         aCoder.encodeObject(middleTitle, forKey: "middleTitle")
         aCoder.encodeObject(middleDetail, forKey: "middleDetail")
+        aCoder.encodeObject(middleDone, forKey: "middleDone")
         aCoder.encodeObject(bottomTitle, forKey: "bottomTitle")
         aCoder.encodeObject(bottomDetail, forKey: "bottomDetail")
+        aCoder.encodeObject(bottomDone, forKey: "bottomDone")
         aCoder.encodeObject(formattedDate, forKey: "formattedDate")
         aCoder.encodeObject(unformattedDate, forKey: "unformattedDate")
     }
@@ -67,14 +83,16 @@ class DateData: NSObject {
     required init(unformattedDate: NSDate) {
         super.init()
         
-        // FIXME: Should this stuff move to PersistencyManager?
-        // I don't think it should, but something needs to be handled differently
+        self.done = false
         self.topTitle = "TitleA"
         self.topDetail = "DetailA"
+        self.topDone = false
         self.middleTitle = "TitleB"
         self.middleDetail = "DetailB"
+        self.middleDone = false
         self.bottomTitle = "TitleC"
         self.bottomDetail = "DetailC"
+        self.bottomDone = false
         
         // format date
         let dateFormatter = NSDateFormatter()

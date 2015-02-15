@@ -16,9 +16,19 @@ class PersistencyManager: NSObject {
     
     func getDateList() -> [DateData] {
         
-        dateList = retrieveDates()!
+        if NSUserDefaults.standardUserDefaults().objectForKey("listData") != nil {
+            dateList = retrieveDates()!
+            return dateList
+        } else {
+            return []
+        }
         
-        return dateList
+    }
+    
+    func setDateList() {
+        
+        saveDates(dateList)
+        
     }
     
     func addDate(dateData: DateData) {
@@ -26,7 +36,6 @@ class PersistencyManager: NSObject {
         for date in dateList {
             println(date.unformattedDate)
         }
-        // TODO: make sure data stays with date
         dateList.sort({ $0.unformattedDate.timeIntervalSinceNow > $1.unformattedDate.timeIntervalSinceNow })
         
         saveDates(dateList)

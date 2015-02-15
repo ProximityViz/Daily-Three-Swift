@@ -9,7 +9,7 @@
 import UIKit
 
 var currentItemIndex:Int!
-var currentDateData : (titles:[String], details:[String])?
+var currentDateData : (titles:[String], details:[String], done:[Bool])?
 
 class ItemsTVC: UITableViewController {
     
@@ -30,6 +30,8 @@ class ItemsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "List"
         
         // FIXME: this code is from a tutorial and may not be what I want
         self.navigationController?.navigationBar.translucent = false
@@ -57,43 +59,9 @@ class ItemsTVC: UITableViewController {
         return 1
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 }
 
+// why are these in an extension?
 extension ItemsTVC: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,11 +75,24 @@ extension ItemsTVC: UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        cell.accessoryView?.frame = CGRectMake(0, 0, 44, 44)
+        
         if let dateData = currentDateData {
+            
             cell.textLabel?.text = dateData.titles[indexPath.row]
+            
             if let detailTextLabel = cell.detailTextLabel {
                 detailTextLabel.text = dateData.details[indexPath.row]
             }
+            
+            let done = dateData.done[indexPath.row]
+            
+            if done {
+                cell.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
+            } else {
+                cell.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+            }
+            
         }
         
         return cell
@@ -121,6 +102,56 @@ extension ItemsTVC: UITableViewDataSource {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         currentItemIndex = indexPath.row
+        
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        var completeAction = UITableViewRowAction(style: .Normal, title: "☑✓✔") { (action, indexPath) -> Void in
+            
+            tableView.editing = false
+            
+            switch indexPath.row {
+                
+            case 0:
+                if (ListData.mainData().getDateList()[currentDateIndex].topDone == true) {
+                    ListData.mainData().getDateList()[currentDateIndex].topDone = false
+                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+                } else {
+                    ListData.mainData().getDateList()[currentDateIndex].topDone = true
+                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
+                }
+                
+            case 1:
+                if (ListData.mainData().getDateList()[currentDateIndex].middleDone == true) {
+                    ListData.mainData().getDateList()[currentDateIndex].middleDone = false
+                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+                } else {
+                    ListData.mainData().getDateList()[currentDateIndex].middleDone = true
+                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
+                }
+                
+            default:
+                if (ListData.mainData().getDateList()[currentDateIndex].bottomDone == true) {
+                    ListData.mainData().getDateList()[currentDateIndex].bottomDone = false
+                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+                } else {
+                    ListData.mainData().getDateList()[currentDateIndex].bottomDone = true
+                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
+                }
+                
+                
+            }
+            
+            ListData.mainData().setDateList()
+            
+        }
+        
+        return [completeAction]
+        
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
     }
     

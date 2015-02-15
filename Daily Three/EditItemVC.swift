@@ -26,6 +26,8 @@ class EditItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Edit"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("saveItem"))
 
         itemDetail.layer.borderWidth = 1

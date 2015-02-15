@@ -14,13 +14,6 @@ private let _mainData: ListData = ListData()
 
 class ListData: NSObject {
     
-//    var selectedVenue: [String:AnyObject]?
-////    var selectedDate
-//    var selectedSeat: PFObject?
-////    var selectedItem
-//    var feedItems: [PFObject] = []
-////    var myFeedItems: [PFObject] = []
-    
     private let persistencyManager: PersistencyManager
     
     override init() {
@@ -39,15 +32,16 @@ class ListData: NSObject {
         return persistencyManager.getDateList()
     }
     
+    func setDateList() {
+        return persistencyManager.setDateList()
+    }
+    
     func addDate(dateData: DateData) {
         persistencyManager.addDate(dateData)
-        // TODO: update NSUserDefaults
-        // or should that be in PersistencyManager?
     }
     
     func deleteDate(index: Int) {
         persistencyManager.deleteDateAtIndex(index)
-        // TODO: update NSUserDefaults
     }
    
 }
