@@ -43,5 +43,32 @@ class ListData: NSObject {
     func deleteDate(index: Int) {
         persistencyManager.deleteDateAtIndex(index)
     }
+    
+    func changeItemAtPosition(position: String, forDateIndex: Int, withTitle: String, withDetail: String, withDone: Bool) {
+        
+        if position == "top" {
+            ListData.mainData().getDateList()[forDateIndex].topTitle = withTitle
+            ListData.mainData().setDateList()
+            ListData.mainData().getDateList()[forDateIndex].topDetail = withDetail
+            ListData.mainData().setDateList()
+            ListData.mainData().getDateList()[forDateIndex].topDone = withDone
+            ListData.mainData().setDateList()
+        } else if position == "middle" {
+            ListData.mainData().getDateList()[forDateIndex].middleTitle = withTitle
+            ListData.mainData().setDateList()
+            ListData.mainData().getDateList()[forDateIndex].middleDetail = withDetail
+            ListData.mainData().setDateList()
+            ListData.mainData().getDateList()[forDateIndex].middleDone = withDone
+            ListData.mainData().setDateList()
+        } else {
+            ListData.mainData().getDateList()[forDateIndex].bottomTitle = withTitle
+            ListData.mainData().setDateList()
+            ListData.mainData().getDateList()[forDateIndex].bottomDetail = withDetail
+            ListData.mainData().setDateList()
+            ListData.mainData().getDateList()[forDateIndex].bottomDone = withDone
+            ListData.mainData().setDateList()
+        }
+        
+    }
    
 }
