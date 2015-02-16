@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */; };
+		EC263A2A1A9146AE00BEEDF2 /* LPRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC263A291A9146AE00BEEDF2 /* LPRTableView.swift */; };
 		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
 		EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339591A884508008C0B1B /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EC263A291A9146AE00BEEDF2 /* LPRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRTableView.swift; sourceTree = "<group>"; };
 		EC3A13091A8E7ADC00A0EB44 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
 		EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		EC4339541A884508008C0B1B /* Daily Three.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Three.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				EC4339821A884A7A008C0B1B /* EditItemVC.swift */,
 				EC43395D1A884508008C0B1B /* Main.storyboard */,
 				EC4339571A884508008C0B1B /* Supporting Files */,
+				EC263A291A9146AE00BEEDF2 /* LPRTableView.swift */,
 			);
 			path = "Daily Three";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */,
 				EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */,
 				EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */,
+				EC263A2A1A9146AE00BEEDF2 /* LPRTableView.swift in Sources */,
 				EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */,
 				EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */,
 				EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */,
