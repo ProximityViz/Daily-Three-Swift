@@ -18,15 +18,15 @@ class EditItemVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        if let dateData = currentDateData {
-            itemTitle.text = dateData.titles[currentItemIndex]
-            itemDetail.text = dateData.details[currentItemIndex]
-        }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let dateData = currentDateData {
+            itemTitle.text = dateData.titles[currentItemIndex]
+            itemDetail.text = dateData.details[currentItemIndex]
+        }
         
         title = "Edit"
         

@@ -22,7 +22,7 @@ class ItemsTVC: UITableViewController {
         
         listData = ListData.mainData().getDateList()
         
-        self.showDataForDate(currentDateIndex)
+        showDataForDate(currentDateIndex)
         
         tableView.reloadData()
         
@@ -30,6 +30,8 @@ class ItemsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.separatorColor = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
         
         title = "List"
         
@@ -76,8 +78,17 @@ extension ItemsTVC: UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
+        // color for highlighted cell background
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
+        cell.selectedBackgroundView = bgColorView
+        
+        // TODO: make the number of lines vary based on length of textLabel and detailTextLabel (is this even possible?)
+        cell.textLabel?.numberOfLines = 2
+        cell.detailTextLabel?.numberOfLines = 8
+        cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
         cell.accessoryView?.frame = CGRectMake(0, 0, 44, 44)
         
         if let dateData = currentDateData {
@@ -104,6 +115,8 @@ extension ItemsTVC: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        listData = ListData.mainData().getDateList()
+        showDataForDate(currentDateIndex)
         currentItemIndex = indexPath.row
         
     }
@@ -162,47 +175,48 @@ extension ItemsTVC: UITableViewDataSource {
         
     }
     
-//    // Override to support rearranging the table view.
-//    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-//        if let dateData = currentDateData {
-//            
-//            if (fromIndexPath.row == 0 && toIndexPath.row == 1) || (fromIndexPath.row == 1 && toIndexPath.row == 0) {
-//                // top & middle swap
-//                ListData.mainData().changeItemAtPosition("top", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
-//                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[0], withDetail: dateData.details[0], withDone: dateData.done[0])
-////                tableView.editing = false
-//            } else if (fromIndexPath.row == 1 && toIndexPath.row == 2) || (fromIndexPath.row == 2 && toIndexPath.row == 1) {
-//                // middle & bottom swap
-//                ListData.mainData().changeItemAtPosition("bottom", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
-//                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[2], withDetail: dateData.details[2], withDone: dateData.done[2])
-////                tableView.editing = false
-//            } else if fromIndexPath.row == 0 && toIndexPath.row == 2 {
-//                // what was top is now bottom
-//                ListData.mainData().changeItemAtPosition("bottom", forDateIndex: currentDateIndex, withTitle: dateData.titles[0], withDetail: dateData.details[0], withDone: dateData.done[0])
-//                // what was middle is now top
-//                ListData.mainData().changeItemAtPosition("top", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
-//                // what was bottom is now middle
-//                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[2], withDetail: dateData.details[2], withDone: dateData.done[2])
-////                tableView.editing = false
-//            } else if fromIndexPath.row == 2 && toIndexPath.row == 0 {
-//                // top becomes middle
-//                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[0], withDetail: dateData.details[0], withDone: dateData.done[0])
-//                // middle becomes bottom
-//                ListData.mainData().changeItemAtPosition("bottom", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
-//                // bottom becomes top
-//                ListData.mainData().changeItemAtPosition("top", forDateIndex: currentDateIndex, withTitle: dateData.titles[2], withDetail: dateData.details[2], withDone: dateData.done[2])
-////                tableView.editing = false
-//            }
-//            
-//        }
-//        
-//    }
-//    
-//    // Override to support conditional rearranging of the table view.
-//    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        // Return NO if you do not want the item to be re-orderable.
-//        return true
-//    }
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        
+        if let dateData = currentDateData {
+            
+            if (fromIndexPath.row == 0 && toIndexPath.row == 1) || (fromIndexPath.row == 1 && toIndexPath.row == 0) {
+                // top & middle swap
+                ListData.mainData().changeItemAtPosition("top", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
+                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[0], withDetail: dateData.details[0], withDone: dateData.done[0])
+//                tableView.editing = false
+            } else if (fromIndexPath.row == 1 && toIndexPath.row == 2) || (fromIndexPath.row == 2 && toIndexPath.row == 1) {
+                // middle & bottom swap
+                ListData.mainData().changeItemAtPosition("bottom", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
+                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[2], withDetail: dateData.details[2], withDone: dateData.done[2])
+//                tableView.editing = false
+            } else if fromIndexPath.row == 0 && toIndexPath.row == 2 {
+                // what was top is now bottom
+                ListData.mainData().changeItemAtPosition("bottom", forDateIndex: currentDateIndex, withTitle: dateData.titles[0], withDetail: dateData.details[0], withDone: dateData.done[0])
+                // what was middle is now top
+                ListData.mainData().changeItemAtPosition("top", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
+                // what was bottom is now middle
+                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[2], withDetail: dateData.details[2], withDone: dateData.done[2])
+//                tableView.editing = false
+            } else if fromIndexPath.row == 2 && toIndexPath.row == 0 {
+                // top becomes middle
+                ListData.mainData().changeItemAtPosition("middle", forDateIndex: currentDateIndex, withTitle: dateData.titles[0], withDetail: dateData.details[0], withDone: dateData.done[0])
+                // middle becomes bottom
+                ListData.mainData().changeItemAtPosition("bottom", forDateIndex: currentDateIndex, withTitle: dateData.titles[1], withDetail: dateData.details[1], withDone: dateData.done[1])
+                // bottom becomes top
+                ListData.mainData().changeItemAtPosition("top", forDateIndex: currentDateIndex, withTitle: dateData.titles[2], withDetail: dateData.details[2], withDone: dateData.done[2])
+//                tableView.editing = false
+            }
+            
+        }
+        
+    }
+    
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return NO if you do not want the item to be re-orderable.
+        return true
+    }
     
 }
 

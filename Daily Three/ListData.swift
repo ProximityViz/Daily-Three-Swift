@@ -44,31 +44,31 @@ class ListData: NSObject {
         persistencyManager.deleteDateAtIndex(index)
     }
     
-    func changeItemAtPosition(position: String, forDateIndex: Int, withTitle: String, withDetail: String, withDone: Bool) {
+    func changeItemAtPosition(position: String, forDateIndex date: Int, withTitle: String, withDetail: String, withDone: Bool) {
         
         if position == "top" {
-            ListData.mainData().getDateList()[forDateIndex].topTitle = withTitle
+            ListData.mainData().getDateList()[date].topTitle = withTitle
             ListData.mainData().setDateList()
-            ListData.mainData().getDateList()[forDateIndex].topDetail = withDetail
+            ListData.mainData().getDateList()[date].topDetail = withDetail
             ListData.mainData().setDateList()
-            ListData.mainData().getDateList()[forDateIndex].topDone = withDone
+            ListData.mainData().getDateList()[date].topDone = withDone
             ListData.mainData().setDateList()
         } else if position == "middle" {
-            ListData.mainData().getDateList()[forDateIndex].middleTitle = withTitle
+            ListData.mainData().getDateList()[date].middleTitle = withTitle
             ListData.mainData().setDateList()
-            ListData.mainData().getDateList()[forDateIndex].middleDetail = withDetail
+            ListData.mainData().getDateList()[date].middleDetail = withDetail
             ListData.mainData().setDateList()
-            ListData.mainData().getDateList()[forDateIndex].middleDone = withDone
+            ListData.mainData().getDateList()[date].middleDone = withDone
             ListData.mainData().setDateList()
         } else {
-            ListData.mainData().getDateList()[forDateIndex].bottomTitle = withTitle
+            ListData.mainData().getDateList()[date].bottomTitle = withTitle
             ListData.mainData().setDateList()
-            ListData.mainData().getDateList()[forDateIndex].bottomDetail = withDetail
+            ListData.mainData().getDateList()[date].bottomDetail = withDetail
             ListData.mainData().setDateList()
-            ListData.mainData().getDateList()[forDateIndex].bottomDone = withDone
+            ListData.mainData().getDateList()[date].bottomDone = withDone
             ListData.mainData().setDateList()
         }
         
     }
-   
+    
 }
