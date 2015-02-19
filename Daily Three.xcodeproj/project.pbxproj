@@ -20,6 +20,7 @@
 		EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397E1A884A4C008C0B1B /* NewDateVC.swift */; };
 		EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339801A884A66008C0B1B /* ItemsTVC.swift */; };
 		EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339821A884A7A008C0B1B /* EditItemVC.swift */; };
+		EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54AE9F1A95774700A9A12D /* LPRTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EC43397E1A884A4C008C0B1B /* NewDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDateVC.swift; sourceTree = "<group>"; };
 		EC4339801A884A66008C0B1B /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
 		EC4339821A884A7A008C0B1B /* EditItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemVC.swift; sourceTree = "<group>"; };
+		EC54AE9F1A95774700A9A12D /* LPRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		EC4339561A884508008C0B1B /* Daily Three */ = {
 			isa = PBXGroup;
 			children = (
+				EC54AE9F1A95774700A9A12D /* LPRTableView.swift */,
 				EC4339791A88452B008C0B1B /* Models */,
 				EC13B8611A902614000D9FC6 /* Aesthetics */,
 				EC43397C1A884A09008C0B1B /* DatesTVC.swift */,
@@ -272,6 +275,7 @@
 				EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */,
 				EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */,
 				EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */,
+				EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */,
 				EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */,
 				EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */,
 				EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */,

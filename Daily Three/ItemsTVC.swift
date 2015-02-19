@@ -10,12 +10,14 @@ import UIKit
 
 var currentItemIndex:Int!
 var currentDateData : (titles:[String], details:[String], done:[Bool])?
+// FIXME: do I need this line?
+var listData = [DateData]()
 
 class ItemsTVC: UITableViewController {
     
     private var listData = [DateData]()
     
-    @IBOutlet var dataTable: UITableView!
+    @IBOutlet var dataTable: LPRTableView!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -34,8 +36,6 @@ class ItemsTVC: UITableViewController {
         tableView.separatorColor = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
         
         title = "List"
-        
-        navigationItem.rightBarButtonItem = editButtonItem()
         
         tableView.rowHeight = (view.frame.size.height - 63) / 3
         
