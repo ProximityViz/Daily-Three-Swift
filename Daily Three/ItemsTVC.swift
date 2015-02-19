@@ -13,7 +13,7 @@ var currentDateData : (titles:[String], details:[String], done:[Bool])?
 // FIXME: do I need this line?
 var listData = [DateData]()
 
-class ItemsTVC: UITableViewController {
+class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     
     private var listData = [DateData]()
     
@@ -86,10 +86,13 @@ extension ItemsTVC: UITableViewDataSource {
         
         // TODO: make the number of lines vary based on length of textLabel and detailTextLabel (is this even possible?)
         cell.textLabel?.numberOfLines = 2
-        cell.detailTextLabel?.numberOfLines = 8
+        cell.detailTextLabel?.numberOfLines = 7
         cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
         cell.accessoryView?.frame = CGRectMake(0, 0, 44, 44)
+        
+        listData = ListData.mainData().getDateList()
+        showDataForDate(currentDateIndex)
         
         if let dateData = currentDateData {
             
@@ -167,9 +170,9 @@ extension ItemsTVC: UITableViewDataSource {
         
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-    }
+//    override func setEditing(editing: Bool, animated: Bool) {
+//        super.setEditing(editing, animated: animated)
+//    }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -210,13 +213,15 @@ extension ItemsTVC: UITableViewDataSource {
             
         }
         
+        tableView.reloadData()
+        
     }
     
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
+//    // Override to support conditional rearranging of the table view.
+//    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        // Return NO if you do not want the item to be re-orderable.
+//        return true
+//    }
     
 }
 

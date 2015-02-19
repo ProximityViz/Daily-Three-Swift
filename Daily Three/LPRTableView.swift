@@ -229,10 +229,6 @@ extension LPRTableView {
                     
                     // Reload the rows that were affected just to be safe.
                     if let visibleRows = self.indexPathsForVisibleRows() {
-                        
-//                        listData = ListData.mainData().getDateList()
-//                        
-//                        ItemsTVC.showDataForDate(currentDateIndex)
                         self.reloadRowsAtIndexPaths(visibleRows, withRowAnimation: .None)
                     }
                     
