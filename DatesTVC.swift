@@ -20,7 +20,7 @@ class DatesTVC: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        tableView.separatorColor = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
+        tableView.separatorColor = darkPrimary
         
         listData = ListData.mainData().getDateList()
         
@@ -52,21 +52,28 @@ class DatesTVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
+        cell.backgroundColor = lightPrimary
+        
         // color for highlighted cell background
         var bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
+        bgColorView.backgroundColor = darkPrimary
         cell.selectedBackgroundView = bgColorView
         
         cell.textLabel?.text = listData[indexPath.row].formattedDate
         
-        cell.accessoryView?.frame = CGRectMake(0, 0, 44, 44)
+        cell.accessoryView?.frame = CGRectMake(0, 0, 31, 31)
         if listData[indexPath.row].done == true {
             cell.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
         } else {
-            cell.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+            cell.accessoryView = UIImageView(image: UIImage(named: "Disclosure"))
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 43
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

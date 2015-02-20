@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="0IX-ch-AjH"/>
                         <viewControllerLayoutGuide type="bottom" id="lYt-ou-red"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="R35-li-AAO">
+                    <view key="view" contentMode="scaleToFill" id="R35-li-AAO" customClass="View" customModule="Daily_Three" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -29,7 +29,6 @@
                                 </date>
                             </datePicker>
                         </subviews>
-                        <color key="backgroundColor" red="0.9882352941176471" green="0.85098039215686272" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WhD-9A-3h2" firstAttribute="top" secondItem="0IX-ch-AjH" secondAttribute="bottom" id="1QU-yd-aLa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WhD-9A-3h2" secondAttribute="trailing" constant="-16" id="Ibh-Ga-x8P"/>
@@ -51,9 +50,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Urr-Js-oMQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.97647058823529409" green="0.84313725490196079" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <color key="sectionIndexBackgroundColor" red="0.98431372549019602" green="0.8666666666666667" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="X7S-Mj-ykL" style="IBUITableViewCellStyleDefault" id="hbr-OI-P2J" customClass="TableViewCell" customModule="Daily_Three" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -63,12 +60,10 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X7S-Mj-ykL">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.1058823529" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.8666666666666667" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="oAT-qg-7SV" kind="show" id="63J-TP-71K"/>
                                 </connections>
@@ -103,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Cell" textLabel="sLH-vv-C9E" detailTextLabel="c2V-vR-FuB" rowHeight="139" style="IBUITableViewCellStyleSubtitle" id="os5-Ng-K8g" customClass="TableViewCell" customModule="Daily_Three" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Cell" textLabel="sLH-vv-C9E" detailTextLabel="c2V-vR-FuB" imageView="Ild-U2-qLi" rowHeight="139" style="IBUITableViewCellStyleSubtitle" id="os5-Ng-K8g" customClass="TableViewCell" customModule="Daily_Three" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="os5-Ng-K8g" id="gOl-cE-Q0L">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -111,18 +106,18 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sLH-vv-C9E">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.1058823529" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c2V-vR-FuB">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.1058823529" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Item 1" id="Ild-U2-qLi">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.8666666666666667" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <segue destination="jnR-Za-Qnl" kind="show" id="vqo-YU-KDn"/>
@@ -150,7 +145,7 @@
                         <viewControllerLayoutGuide type="top" id="utL-cx-KET"/>
                         <viewControllerLayoutGuide type="bottom" id="0CY-6M-u8N"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="97O-lV-GEn">
+                    <view key="view" contentMode="scaleToFill" id="97O-lV-GEn" customClass="View" customModule="Daily_Three" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -184,7 +179,6 @@
                                 </variation>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.98431372549999996" green="0.86666666670000003" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="RKz-z2-Xfv" secondAttribute="trailing" id="A6w-JT-VME"/>
                             <constraint firstItem="Xba-yU-ooM" firstAttribute="top" secondItem="RKz-z2-Xfv" secondAttribute="bottom" constant="16" id="BUv-Wu-t4z"/>
@@ -214,7 +208,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="MNM-xU-zRP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.97254901960784312" green="0.70980392156862748" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.0" green="0.1058823529" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
@@ -229,4 +222,7 @@
             <point key="canvasLocation" x="1123" y="555"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Item 1" width="36" height="44"/>
+    </resources>
 </document>

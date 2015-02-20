@@ -33,9 +33,15 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.separatorColor = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
+        tableView.separatorColor = darkPrimary
+//        view.backgroundColor = lightPrimary
         
-        title = "List"
+        // format date
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM d"
+        
+        listData = ListData.mainData().getDateList()
+        title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
         
         tableView.rowHeight = (view.frame.size.height - 63) / 3
         
@@ -55,7 +61,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
             currentDateData = nil
         }
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -79,9 +85,10 @@ extension ItemsTVC: UITableViewDataSource {
         
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
+        cell.backgroundColor = lightPrimary
         // color for highlighted cell background
         var bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red:0.97, green:0.71, blue:0.05, alpha:1)
+        bgColorView.backgroundColor = darkPrimary
         cell.selectedBackgroundView = bgColorView
         
         // TODO: make the number of lines vary based on length of textLabel and detailTextLabel (is this even possible?)
@@ -89,14 +96,30 @@ extension ItemsTVC: UITableViewDataSource {
         cell.detailTextLabel?.numberOfLines = 7
         cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
-        cell.accessoryView?.frame = CGRectMake(0, 0, 44, 44)
+        if indexPath.row == 0 {
+            cell.imageView?.image = UIImage(named: "Item 1")
+        } else if indexPath.row == 1 {
+            cell.imageView?.image = UIImage(named: "Item 2")
+        } else if indexPath.row == 2 {
+            cell.imageView?.image = UIImage(named: "Item 3")
+        }
+        
+        cell.accessoryView?.frame = CGRectMake(0, 0, 31, 31)
+        cell.frame.size.height = 100
         
         listData = ListData.mainData().getDateList()
         showDataForDate(currentDateIndex)
         
         if let dateData = currentDateData {
             
-            cell.textLabel?.text = dateData.titles[indexPath.row]
+            // TODO: Remove this once images are added
+            if dateData.titles[indexPath.row] == "" {
+                cell.textLabel?.text = "Daily Item #" + String(indexPath.row + 1)
+                cell.textLabel?.textColor = darkSecondary
+            } else {
+                cell.textLabel?.text = dateData.titles[indexPath.row]
+                cell.textLabel?.textColor = darkSecondary
+            }
             
             if let detailTextLabel = cell.detailTextLabel {
                 detailTextLabel.text = dateData.details[indexPath.row]
@@ -107,7 +130,7 @@ extension ItemsTVC: UITableViewDataSource {
             if done {
                 cell.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
             } else {
-                cell.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+                cell.accessoryView = UIImageView(image: UIImage(named: "Disclosure"))
             }
             
         }

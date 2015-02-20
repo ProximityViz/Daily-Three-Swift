@@ -8,6 +8,11 @@
 
 import UIKit
 
+let darkPrimary = UIColor(red:0.97, green:0.67, blue:0.18, alpha:1)
+let lightPrimary = UIColor(red:0.98, green:0.87, blue:0.57, alpha:1)
+let darkSecondary = UIColor(red:0, green:0.05, blue:0.18, alpha:1)
+let primaryFont = "HelveticaNeue-Bold"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,9 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        UIBarButtonItem.appearance().tintColor = UIColor(red:0, green:0.11, blue:0.35, alpha:1)
-        UINavigationBar.appearance().tintColor = UIColor(red:0, green:0.11, blue:0.35, alpha:1)
-//        UINavigationBar.appearance().barStyle = UIBarStyle.Default
+        UIBarButtonItem.appearance().tintColor = darkSecondary
+        UINavigationBar.appearance().tintColor = darkSecondary
+        UITableView.appearance().backgroundColor = lightPrimary
+        UITableViewCell.appearance().backgroundColor = lightPrimary
+        UILabel.appearance().textColor = darkSecondary
+        UITextView.appearance().textColor = darkSecondary
+        UITextField.appearance().textColor = darkSecondary
+        UITableViewCell.appearance().textLabel?.textColor = darkSecondary
+        UINavigationBar.appearance().barTintColor = darkPrimary
+        UINavigationBar.appearance().translucent = false
+        View.appearance().backgroundColor = lightPrimary
+//        UITableViewCell.appearance().textLabel?.font = UIFont(name: primaryFont, size: 14)
+//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!]
         
         return true
     }

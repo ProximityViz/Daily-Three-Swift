@@ -51,7 +51,7 @@ class EditItemVC: UIViewController {
     func keyboardWillShow(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                detailBottomConstraint.constant = keyboardSize.height + 8
+                detailBottomConstraint.constant = keyboardSize.height + 16
             }
         }
     }

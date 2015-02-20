@@ -84,14 +84,14 @@ class DateData: NSObject {
         super.init()
         
         self.done = false
-        self.topTitle = "TitleA"
-        self.topDetail = "DetailA"
+        self.topTitle = ""
+        self.topDetail = ""
         self.topDone = false
-        self.middleTitle = "TitleB"
-        self.middleDetail = "DetailB"
+        self.middleTitle = ""
+        self.middleDetail = ""
         self.middleDone = false
-        self.bottomTitle = "TitleC"
-        self.bottomDetail = "DetailC"
+        self.bottomTitle = ""
+        self.bottomDetail = ""
         self.bottomDone = false
         
         // format date
