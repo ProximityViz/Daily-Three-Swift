@@ -20,8 +20,6 @@ class DatesTVC: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        tableView.separatorColor = darkPrimary
-        
         listData = ListData.mainData().getDateList()
         
         dataTable.delegate = self
@@ -35,6 +33,8 @@ class DatesTVC: UITableViewController {
         super.viewDidLoad()
         
         currentDateIndex = 0
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:0.98, green:0.87, blue:0.57, alpha:1), NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
         
     }
 
@@ -52,13 +52,6 @@ class DatesTVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.backgroundColor = lightPrimary
-        
-        // color for highlighted cell background
-        var bgColorView = UIView()
-        bgColorView.backgroundColor = darkPrimary
-        cell.selectedBackgroundView = bgColorView
-        
         cell.textLabel?.text = listData[indexPath.row].formattedDate
         
         cell.accessoryView?.frame = CGRectMake(0, 0, 31, 31)
@@ -67,6 +60,8 @@ class DatesTVC: UITableViewController {
         } else {
             cell.accessoryView = UIImageView(image: UIImage(named: "Disclosure"))
         }
+        
+        cell.textLabel?.font = UIFont(name: primaryFont, size: 20)
         
         return cell
     }

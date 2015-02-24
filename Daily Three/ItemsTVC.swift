@@ -10,7 +10,6 @@ import UIKit
 
 var currentItemIndex:Int!
 var currentDateData : (titles:[String], details:[String], done:[Bool])?
-// FIXME: do I need this line?
 var listData = [DateData]()
 
 class ItemsTVC: UITableViewController, LPRTableViewDelegate {
@@ -32,9 +31,6 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.separatorColor = darkPrimary
-//        view.backgroundColor = lightPrimary
         
         // format date
         let dateFormatter = NSDateFormatter()
@@ -67,11 +63,6 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
-}
-
-// TODO: why are these in an extension?
-extension ItemsTVC: UITableViewDataSource {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let dateData = currentDateData {
@@ -85,16 +76,13 @@ extension ItemsTVC: UITableViewDataSource {
         
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.backgroundColor = lightPrimary
-        // color for highlighted cell background
-        var bgColorView = UIView()
-        bgColorView.backgroundColor = darkPrimary
-        cell.selectedBackgroundView = bgColorView
-        
-        // TODO: make the number of lines vary based on length of textLabel and detailTextLabel (is this even possible?)
         cell.textLabel?.numberOfLines = 2
-        cell.detailTextLabel?.numberOfLines = 7
+        // this next line is assuming textLabel font size of 18 and detailLabel of 14
+        cell.detailTextLabel?.numberOfLines = Int(floor(CGFloat((cell.frame.height - 54) / 21)))
         cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
+        cell.textLabel?.font = UIFont(name: primaryFont, size: 18)
+        cell.detailTextLabel?.font = UIFont(name: primaryFont, size: 14)
         
         if indexPath.row == 0 {
             cell.imageView?.image = UIImage(named: "Item 1")
@@ -112,10 +100,9 @@ extension ItemsTVC: UITableViewDataSource {
         
         if let dateData = currentDateData {
             
-            // TODO: Remove this once images are added
             if dateData.titles[indexPath.row] == "" {
                 cell.textLabel?.text = "Daily Item #" + String(indexPath.row + 1)
-                cell.textLabel?.textColor = darkSecondary
+                cell.textLabel?.textColor = darkPrimary
             } else {
                 cell.textLabel?.text = dateData.titles[indexPath.row]
                 cell.textLabel?.textColor = darkSecondary

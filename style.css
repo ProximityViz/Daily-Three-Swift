@@ -27,19 +27,28 @@ body {
   top: 20px;
 }
 
-#left {
+#main {
+  float: right;
+  position: relative;
+  left: -50%;
+  text-align: left
+}
+
+#inner {
+  position: relative;
+  left: 50%;
+}
+
+.item {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   margin-left: 0px;
-  width: 50%;
+  width: 250px;
   float: left;
 }
 
-#right {
-  text-align: center;
+.screenshot {
   margin-top: 100px;
-  width: 50%;
-  float: left;
 }
 
 #bottom {
@@ -53,11 +62,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #000D2F;
+  color: #000000;
 }
 
 a:link {
-  color: #000D2F;
+  color: #000000;
 }
 
 /*a:visited {
@@ -70,7 +79,7 @@ a:hover {
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 6px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
@@ -97,7 +106,7 @@ a:hover {
 }
 .btn:hover,
 .btn:focus {
-  color: #002EAB;
+  color: #BF380B;
   text-decoration: none;
 }
 .btn:active,

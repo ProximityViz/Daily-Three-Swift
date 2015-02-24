@@ -8,23 +8,30 @@
 
 import UIKit
 
-let darkPrimary = UIColor(red:0.97, green:0.67, blue:0.18, alpha:1)
+let darkPrimary = UIColor(red:0.75, green:0.28, blue:0.04, alpha:1)
+//let mediumPrimary = UIColor(red:1, green:0.65, blue:0.4, alpha:1)
+let mediumPrimary = UIColor(red:0.85, green:0.55, blue:0.24, alpha:1)
 let lightPrimary = UIColor(red:0.98, green:0.87, blue:0.57, alpha:1)
 let darkSecondary = UIColor(red:0, green:0.05, blue:0.18, alpha:1)
-let primaryFont = "HelveticaNeue-Bold"
+let headerFont = "Avenir-Light"
+let primaryFont = "Avenir-Book"
+let boldFont = "Avenir-Heavy"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        UIBarButtonItem.appearance().tintColor = darkSecondary
-        UINavigationBar.appearance().tintColor = darkSecondary
+        UIBarButtonItem.appearance().tintColor = lightPrimary
+        UINavigationBar.appearance().tintColor = lightPrimary
         UITableView.appearance().backgroundColor = lightPrimary
+        UITableView.appearance().separatorColor = darkPrimary
         UITableViewCell.appearance().backgroundColor = lightPrimary
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = mediumPrimary
+        UITableViewCell.appearance().selectedBackgroundView = bgColorView
         UILabel.appearance().textColor = darkSecondary
         UITextView.appearance().textColor = darkSecondary
         UITextField.appearance().textColor = darkSecondary
@@ -32,8 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = darkPrimary
         UINavigationBar.appearance().translucent = false
         View.appearance().backgroundColor = lightPrimary
-//        UITableViewCell.appearance().textLabel?.font = UIFont(name: primaryFont, size: 14)
-//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20.0)!]
+        //        UITableViewCell.appearance().textLabel?.font = UIFont(name: primaryFont, size: 14)
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
+        UIBarButtonItem.appearance().setTitleTextAttributes(([NSFontAttributeName: UIFont(name: headerFont, size: 16)!]), forState: UIControlState.Normal)
+        UITextField.appearance().font = UIFont(name: primaryFont, size: 16)
+        UITextView.appearance().font = UIFont(name: primaryFont, size: 16)
         
         return true
     }

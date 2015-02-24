@@ -28,7 +28,6 @@ class NewDateVC: UIViewController {
         ListData.mainData().addDate(DateData(unformattedDate: datePicker.date))
         
         // dismiss VC
-        // FIXME: should there be a completion block?
         navigationController?.popViewControllerAnimated(true)
         
     }

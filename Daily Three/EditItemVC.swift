@@ -31,6 +31,10 @@ class EditItemVC: UIViewController {
         title = "Edit"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("saveItem"))
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: boldFont, size: 16)!], forState: UIControlState.Normal)
+        
+        itemTitle.autocapitalizationType = UITextAutocapitalizationType.Sentences
+        itemDetail.autocapitalizationType = UITextAutocapitalizationType.Sentences
 
         itemDetail.layer.borderWidth = 1
         itemDetail.layer.borderColor = UIColor(red:0.9, green:0.9, blue:0.9, alpha:1).CGColor
@@ -88,7 +92,6 @@ class EditItemVC: UIViewController {
         ListData.mainData().addDate(dateData)
         
         // dismiss VC
-        // FIXME: should there be a completion block?
         navigationController?.popViewControllerAnimated(true)
         
     }

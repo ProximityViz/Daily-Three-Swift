@@ -105,6 +105,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Daily Three"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
