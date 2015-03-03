@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC1064B91A96BAA1009E8DEC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1064B81A96BAA1009E8DEC /* View.swift */; };
+		EC13A7AC1AA4CD4300B9AD6F /* DatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */; };
 		EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */; };
 		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
@@ -17,7 +18,6 @@
 		EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4339621A884508008C0B1B /* LaunchScreen.xib */; };
 		EC4339701A884508008C0B1B /* Daily_ThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */; };
 		EC43397B1A88453B008C0B1B /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397A1A88453B008C0B1B /* ListData.swift */; };
-		EC43397D1A884A09008C0B1B /* DatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397C1A884A09008C0B1B /* DatesTVC.swift */; };
 		EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397E1A884A4C008C0B1B /* NewDateVC.swift */; };
 		EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339801A884A66008C0B1B /* ItemsTVC.swift */; };
 		EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339821A884A7A008C0B1B /* EditItemVC.swift */; };
@@ -36,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		EC1064B81A96BAA1009E8DEC /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesTVC.swift; sourceTree = "<group>"; };
 		EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EC3A13091A8E7ADC00A0EB44 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
 		EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		EC43396E1A884508008C0B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_ThreeTests.swift; sourceTree = "<group>"; };
 		EC43397A1A88453B008C0B1B /* ListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
-		EC43397C1A884A09008C0B1B /* DatesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatesTVC.swift; path = ../DatesTVC.swift; sourceTree = "<group>"; };
 		EC43397E1A884A4C008C0B1B /* NewDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDateVC.swift; sourceTree = "<group>"; };
 		EC4339801A884A66008C0B1B /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
 		EC4339821A884A7A008C0B1B /* EditItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemVC.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				EC54AE9F1A95774700A9A12D /* LPRTableView.swift */,
 				EC4339791A88452B008C0B1B /* Models */,
 				EC13B8611A902614000D9FC6 /* Aesthetics */,
-				EC43397C1A884A09008C0B1B /* DatesTVC.swift */,
+				EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */,
 				EC43397E1A884A4C008C0B1B /* NewDateVC.swift */,
 				EC4339801A884A66008C0B1B /* ItemsTVC.swift */,
 				EC4339821A884A7A008C0B1B /* EditItemVC.swift */,
@@ -205,6 +205,7 @@
 				TargetAttributes = {
 					EC4339531A884508008C0B1B = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 34XFQ7WVN3;
 					};
 					EC4339681A884508008C0B1B = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -273,12 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC43397B1A88453B008C0B1B /* ListData.swift in Sources */,
-				EC43397D1A884A09008C0B1B /* DatesTVC.swift in Sources */,
 				EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */,
 				EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */,
 				EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */,
 				EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */,
 				EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */,
+				EC13A7AC1AA4CD4300B9AD6F /* DatesTVC.swift in Sources */,
 				EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */,
 				EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */,
 				EC1064B91A96BAA1009E8DEC /* View.swift in Sources */,
@@ -406,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Daily Three/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -418,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Daily Three/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
