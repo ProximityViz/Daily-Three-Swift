@@ -13,6 +13,7 @@ let darkPrimary = UIColor(red:0.75, green:0.28, blue:0.04, alpha:1)
 let mediumPrimary = UIColor(red:0.85, green:0.55, blue:0.24, alpha:1)
 let lightPrimary = UIColor(red:0.98, green:0.87, blue:0.57, alpha:1)
 let darkSecondary = UIColor(red:0, green:0.05, blue:0.18, alpha:1)
+let accentColor = UIColor(red:0.15, green:0.68, blue:0.38, alpha:1) // green
 let headerFont = "Avenir-Light"
 let primaryFont = "Avenir-Book"
 let boldFont = "Avenir-Heavy"
@@ -22,8 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // TODO: make sure everything looks right if app launches in landscape mode (but app should launch in portrait mode, always)
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        UISwitch.appearance().onTintColor = accentColor
         UIBarButtonItem.appearance().tintColor = lightPrimary
         UINavigationBar.appearance().tintColor = lightPrimary
         UITableView.appearance().backgroundColor = lightPrimary
@@ -37,13 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITextField.appearance().textColor = darkSecondary
         UITableViewCell.appearance().textLabel?.textColor = darkSecondary
         UINavigationBar.appearance().barTintColor = darkPrimary
-        UINavigationBar.appearance().translucent = false
         View.appearance().backgroundColor = lightPrimary
         //        UITableViewCell.appearance().textLabel?.font = UIFont(name: primaryFont, size: 14)
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
         UIBarButtonItem.appearance().setTitleTextAttributes(([NSFontAttributeName: UIFont(name: headerFont, size: 16)!]), forState: UIControlState.Normal)
         UITextField.appearance().font = UIFont(name: primaryFont, size: 16)
         UITextView.appearance().font = UIFont(name: primaryFont, size: 16)
+        UILabel.appearance().font = UIFont(name: primaryFont, size: 16)
         
         return true
     }
@@ -68,6 +72,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        
+        if identifier == "editList" {
+            NSNotificationCenter.defaultCenter().postNotificationName("modifyListNotification", object: nil)
+        }
+        else if identifier == "trashAction" {
+            NSNotificationCenter.defaultCenter().postNotificationName("deleteListNotification", object: nil)
+        }
+        
+        completionHandler()
     }
 
 

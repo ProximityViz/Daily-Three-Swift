@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC02EFB31AA636AC00D963EA /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC02EFB21AA636AC00D963EA /* ReminderVC.swift */; };
 		EC1064B91A96BAA1009E8DEC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1064B81A96BAA1009E8DEC /* View.swift */; };
 		EC13A7AC1AA4CD4300B9AD6F /* DatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */; };
 		EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC02EFB21AA636AC00D963EA /* ReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		EC1064B81A96BAA1009E8DEC /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesTVC.swift; sourceTree = "<group>"; };
 		EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				EC13B8611A902614000D9FC6 /* Aesthetics */,
 				EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */,
 				EC43397E1A884A4C008C0B1B /* NewDateVC.swift */,
+				EC02EFB21AA636AC00D963EA /* ReminderVC.swift */,
 				EC4339801A884A66008C0B1B /* ItemsTVC.swift */,
 				EC4339821A884A7A008C0B1B /* EditItemVC.swift */,
 				EC43395D1A884508008C0B1B /* Main.storyboard */,
@@ -279,6 +282,7 @@
 				EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */,
 				EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */,
 				EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */,
+				EC02EFB31AA636AC00D963EA /* ReminderVC.swift in Sources */,
 				EC13A7AC1AA4CD4300B9AD6F /* DatesTVC.swift in Sources */,
 				EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */,
 				EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */,
@@ -412,6 +416,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -425,6 +430,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

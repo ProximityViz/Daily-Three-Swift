@@ -20,6 +20,16 @@
       "idiom" : "iphone",
       "scale" : "3x",
       "filename" : "Launch Screen@3x.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "Launch Screen@1x-iPad.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "Launch Screen@2x-iPad.png"
     }
   ],
   "info" : {

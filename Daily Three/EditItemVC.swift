@@ -30,6 +30,7 @@ class EditItemVC: UIViewController {
         
         title = "Edit"
         
+        navigationController?.navigationBar.translucent = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("saveItem"))
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: boldFont, size: 16)!], forState: UIControlState.Normal)
         

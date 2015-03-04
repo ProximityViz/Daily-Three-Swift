@@ -34,6 +34,7 @@ class DatesTVC: UITableViewController {
         
         currentDateIndex = 0
         
+        navigationController?.navigationBar.translucent = false
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:0.98, green:0.87, blue:0.57, alpha:1), NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
         
     }

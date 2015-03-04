@@ -19,6 +19,7 @@ class NewDateVC: UIViewController {
         
         title = "New Date"
         
+        navigationController?.navigationBar.translucent = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("saveDate"))
 
     }

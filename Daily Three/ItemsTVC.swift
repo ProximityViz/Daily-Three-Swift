@@ -32,6 +32,10 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
+        navigationController?.navigationBar.translucent = false
+        
         // format date
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEE, MMM d"
@@ -39,13 +43,41 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
         listData = ListData.mainData().getDateList()
         title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
         
-        tableView.rowHeight = (view.frame.size.height - 63) / 3
+        // TODO: refactor this & rotated()
+        
+        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
+            println("landscape")
+            tableView.rowHeight = (tableView.frame.size.height - 31) / 3
+            tableView.reloadData()
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
+            println("portrait")
+            tableView.rowHeight = (tableView.frame.size.height - 63) / 3
+            tableView.reloadData()
+        }
         
         currentItemIndex = 0
         
         dataTable.delegate = self
         dataTable.dataSource = self
         dataTable.backgroundView = nil
+    }
+    
+    func rotated() {
+        
+        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
+            println("landscape")
+            tableView.rowHeight = tableView.frame.size.height / 3
+            tableView.reloadData()
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
+            println("portrait")
+            tableView.rowHeight = tableView.frame.size.height / 3
+            tableView.reloadData()
+        }
+        
     }
     
     func showDataForDate(dateIndex: Int) {
@@ -76,6 +108,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
         
         var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
+        // TODO: make sure that the number of lines for textLabel and detailTextLabel are correct and maximized
         cell.textLabel?.numberOfLines = 2
         // this next line is assuming textLabel font size of 18 and detailLabel of 14
         cell.detailTextLabel?.numberOfLines = Int(floor(CGFloat((cell.frame.height - 54) / 21)))
