@@ -22,11 +22,10 @@ let boldFont = "Avenir-Heavy"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    // TODO: make sure everything looks right if app launches in landscape mode (but app should launch in portrait mode, always)
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // MARK: Aesthetics
         UISwitch.appearance().onTintColor = accentColor
         UIBarButtonItem.appearance().tintColor = lightPrimary
         UINavigationBar.appearance().tintColor = lightPrimary
@@ -48,8 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITextField.appearance().font = UIFont(name: primaryFont, size: 16)
         UITextView.appearance().font = UIFont(name: primaryFont, size: 16)
         UILabel.appearance().font = UIFont(name: primaryFont, size: 16)
-        
+    
         return true
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -73,20 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
-    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-        
-        if identifier == "editList" {
-            NSNotificationCenter.defaultCenter().postNotificationName("modifyListNotification", object: nil)
-        }
-        else if identifier == "trashAction" {
-            NSNotificationCenter.defaultCenter().postNotificationName("deleteListNotification", object: nil)
-        }
-        
-        completionHandler()
-    }
-
 
 }
 

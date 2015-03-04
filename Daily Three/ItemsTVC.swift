@@ -44,15 +44,12 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
         title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
         
         // TODO: refactor this & rotated()
-        
         if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
-            println("landscape")
             tableView.rowHeight = (tableView.frame.size.height - 31) / 3
             tableView.reloadData()
         }
         
         if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
-            println("portrait")
             tableView.rowHeight = (tableView.frame.size.height - 63) / 3
             tableView.reloadData()
         }
@@ -67,13 +64,11 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     func rotated() {
         
         if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
-            println("landscape")
             tableView.rowHeight = tableView.frame.size.height / 3
             tableView.reloadData()
         }
         
         if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
-            println("portrait")
             tableView.rowHeight = tableView.frame.size.height / 3
             tableView.reloadData()
         }

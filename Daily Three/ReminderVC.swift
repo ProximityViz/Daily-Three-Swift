@@ -20,6 +20,7 @@ class ReminderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO: make placeholder text gray
         
         // TODO: add observer
         
@@ -84,108 +85,52 @@ class ReminderVC: UIViewController {
     
     func saveReminder() {
         
-        if reminderSwitch.on == true {
-            
-            UIApplication.sharedApplication().cancelAllLocalNotifications()
-
-            let notificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
-            let notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
-            UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-            
-            let notification = UILocalNotification()
-            notification.fireDate = timePicker.date
-            notification.timeZone = NSTimeZone.defaultTimeZone()
-            notification.repeatInterval = NSCalendarUnit.DayCalendarUnit
-            notification.alertBody = notificationTextField.text
-//            notification.soundName = "Glass.aiff"
-            notification.alertAction = "View List"
-            //            notification.applicationIconBadgeNumber = 1
-            
-            println(notification)
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
-            
-        } else {
-            
-            // cancel any notifications
-            UIApplication.sharedApplication().cancelAllLocalNotifications()
-            
-        }
-        
-        // TODO: save time, on/off, notificationTextField.text to NSUserDefaults
-        
         settings["notificationOn"] = reminderSwitch.on
         settings["notificationText"] = notificationTextField.text
         settings["notificationTime"] = timePicker.date
         defaults.setValue(settings, forKey: "settings")
+        
+        if reminderSwitch.on == true {
+            
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
+            scheduleLocalNotification()
+            
+        } else {
+            
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
+            
+        }
 
         navigationController?.popToRootViewControllerAnimated(true)
         
     }
     
-//    // MARK: Notifications
-//    func setupNotificationSettings() {
-//        // Specify the notification types.
-//        var notificationTypes: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Sound
-//        
-//        var justInformAction = UIMutableUserNotificationAction()
-//        justInformAction.identifier = "justInform"
-//        justInformAction.title = "OK, got it"
-//        justInformAction.activationMode = UIUserNotificationActivationMode.Background
-//        justInformAction.destructive = false
-//        justInformAction.authenticationRequired = false
-//        
-//        var modifyListAction = UIMutableUserNotificationAction()
-//        modifyListAction.identifier = "editList"
-//        modifyListAction.title = "Edit list"
-//        modifyListAction.activationMode = UIUserNotificationActivationMode.Foreground
-//        modifyListAction.destructive = false
-//        modifyListAction.authenticationRequired = true
-//        
-//        var trashAction = UIMutableUserNotificationAction()
-//        trashAction.identifier = "trashAction"
-//        trashAction.title = "Delete list"
-//        trashAction.activationMode = UIUserNotificationActivationMode.Background
-//        trashAction.destructive = true
-//        trashAction.authenticationRequired = true
-//        
-//        let actionsArray = NSArray(objects: justInformAction, modifyListAction, trashAction)
-//        let actionsArrayMinimal = NSArray(objects: trashAction, modifyListAction)
-//        
-//        // Specify the category related to the above actions.
-//        var shoppingListReminderCategory = UIMutableUserNotificationCategory()
-//        shoppingListReminderCategory.identifier = "shoppingListReminderCategory"
-//        shoppingListReminderCategory.setActions(actionsArray, forContext: UIUserNotificationActionContext.Default)
-//        shoppingListReminderCategory.setActions(actionsArrayMinimal, forContext: UIUserNotificationActionContext.Minimal)
-//        
-//        
-//        let categoriesForSettings = NSSet(objects: shoppingListReminderCategory)
-//        
-//        
-//        // Register the notification settings.
-//        let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings)
-//        UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
-//        
-//        // FIXME: is there a way to cancel the notification if the app is active?
-//        
-//    }
-//    
-//    
-//    func scheduleLocalNotification() {
-//        
-//        
-//        var localNotification = UILocalNotification()
-//        localNotification.fireDate = timePicker.date
-//        localNotification.timeZone = NSTimeZone.defaultTimeZone()
-//        localNotification.repeatInterval = NSCalendarUnit.DayCalendarUnit
-//        localNotification.alertBody = notificationTextField.text
-//        localNotification.alertAction = "View List"
-//        
-//        localNotification.category = "shoppingListReminderCategory"
-//        
-//        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-//    }
+    func scheduleLocalNotification() {
+        
+        let notificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Sound
+        let notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        let notification = UILocalNotification()
+//        notification.fireDate = NSDate(timeIntervalSinceNow: 5)
+        notification.fireDate = timePicker.date
+        notification.repeatInterval = NSCalendarUnit.DayCalendarUnit
+        notification.timeZone = NSTimeZone.defaultTimeZone()
+        if let alertText = settings["notificationText"] as? String {
+            if alertText == "" {
+                notification.alertBody = "Remember your Daily Three"
+            } else {
+                notification.alertBody = alertText
+            }
+        } else {
+            notification.alertBody = "Remember your Daily Three"
+        }
+        //            notification.alertAction = "View List"
+        //            notification.soundName = "Glass.aiff"
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+    }
     
 
 }
