@@ -118,12 +118,12 @@ class ReminderVC: UIViewController {
         notification.timeZone = NSTimeZone.defaultTimeZone()
         if let alertText = settings["notificationText"] as? String {
             if alertText == "" {
-                notification.alertBody = "Remember your Daily Three"
+                notification.alertBody = "What three accomplishments would make today awesome?"
             } else {
                 notification.alertBody = alertText
             }
         } else {
-            notification.alertBody = "Remember your Daily Three"
+            notification.alertBody = "What three accomplishments would make today awesome?"
         }
         //            notification.alertAction = "View List"
         //            notification.soundName = "Glass.aiff"
