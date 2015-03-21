@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = darkPrimary
         View.appearance().backgroundColor = lightPrimary
         //        UITableViewCell.appearance().textLabel?.font = UIFont(name: primaryFont, size: 14)
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: lightPrimary, NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
         UIBarButtonItem.appearance().setTitleTextAttributes(([NSFontAttributeName: UIFont(name: headerFont, size: 16)!]), forState: UIControlState.Normal)
         UITextField.appearance().font = UIFont(name: primaryFont, size: 16)
         UITextView.appearance().font = UIFont(name: primaryFont, size: 16)

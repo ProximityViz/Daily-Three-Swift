@@ -32,8 +32,11 @@ class DatesTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        splitViewController?.preferredPrimaryColumnWidthFraction = 0.5 // FIXME: not working
+        
         currentDateIndex = 0
         
+        tableView.backgroundColor = lightPrimary
         navigationController?.navigationBar.translucent = false
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:0.98, green:0.87, blue:0.57, alpha:1), NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
         
@@ -75,6 +78,10 @@ class DatesTVC: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         currentDateIndex = indexPath.row
+        NSNotificationCenter.defaultCenter().postNotificationName("viewDate", object: currentDateIndex) // reload tableview of ItemsTVC
+        
+        let navC = storyboard?.instantiateViewControllerWithIdentifier("itemsNavC") as UINavigationController
+        showDetailViewController(navC, sender: self)
         
     }
     

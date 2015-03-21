@@ -21,27 +21,41 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        refresh()
+        
+    }
+    
+    func refresh() {
+        
         listData = ListData.mainData().getDateList()
+        
+        // format date
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM d"
+        if listData.isEmpty {
+            title = ""
+        } else {
+            title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
+        }
         
         showDataForDate(currentDateIndex)
         
         tableView.reloadData()
-        
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.backgroundColor = lightPrimary
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: "viewDate", object: nil)
+        
         navigationController?.navigationBar.translucent = false
-        
-        // format date
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEE, MMM d"
-        
-        listData = ListData.mainData().getDateList()
-        title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
         
         // TODO: refactor this & rotated()
         if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {

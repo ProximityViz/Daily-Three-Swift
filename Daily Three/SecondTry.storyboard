@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nN1-2q-Vdu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6P0-OK-C1L">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -156,9 +156,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="oAT-qg-7SV" kind="show" id="63J-TP-71K"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -191,7 +188,7 @@
             <objects>
                 <tableViewController id="oAT-qg-7SV" customClass="ItemsTVC" customModule="Daily_Three" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6WM-4u-m4x" customClass="LPRTableView" customModule="Daily_Three" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -226,13 +223,14 @@
                             <outlet property="delegate" destination="oAT-qg-7SV" id="ipB-qK-GIv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="4GN-Lr-vVB"/>
                     <connections>
                         <outlet property="dataTable" destination="6WM-4u-m4x" id="QEo-Ra-DL0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7u6-tL-ao4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="555"/>
+            <point key="canvasLocation" x="1783" y="1259"/>
         </scene>
         <!--Edit ItemVC-->
         <scene sceneID="flf-Ii-QRW">
@@ -243,10 +241,10 @@
                         <viewControllerLayoutGuide type="bottom" id="0CY-6M-u8N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="97O-lV-GEn" customClass="View" customModule="Daily_Three" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKz-z2-Xfv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKz-z2-Xfv">
                                 <rect key="frame" x="16" y="16" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="i02-bd-cqd"/>
@@ -260,7 +258,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xba-yU-ooM">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xba-yU-ooM">
                                 <rect key="frame" x="16" y="62" width="568" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -294,7 +292,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXQ-DP-qdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3326" y="555"/>
+            <point key="canvasLocation" x="2443" y="1259"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="mWJ-Ew-1Dp">
+            <objects>
+                <splitViewController id="6P0-OK-C1L" customClass="SplitViewController" customModule="Daily_Three" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="nN1-2q-Vdu" kind="relationship" relationship="masterViewController" id="S1A-Bk-Quv"/>
+                        <segue destination="qBq-Su-Pmt" kind="relationship" relationship="detailViewController" id="QLZ-SS-lk7"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqU-9y-grO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="901"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oYa-mC-XAt">
@@ -317,6 +328,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q7-My-Tnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1123" y="555"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CeO-46-u2m">
+            <objects>
+                <navigationController storyboardIdentifier="itemsNavC" automaticallyAdjustsScrollViewInsets="NO" id="qBq-Su-Pmt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VJZ-ON-Qup">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oAT-qg-7SV" kind="relationship" relationship="rootViewController" id="VRd-0g-g9f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SML-HT-BDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="1259"/>
         </scene>
     </scenes>
     <resources>
