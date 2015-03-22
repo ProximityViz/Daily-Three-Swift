@@ -14,7 +14,6 @@
 		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
 		EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339591A884508008C0B1B /* AppDelegate.swift */; };
-		EC43395F1A884508008C0B1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC43395D1A884508008C0B1B /* Main.storyboard */; };
 		EC4339611A884508008C0B1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4339601A884508008C0B1B /* Images.xcassets */; };
 		EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4339621A884508008C0B1B /* LaunchScreen.xib */; };
 		EC4339701A884508008C0B1B /* Daily_ThreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43396F1A884508008C0B1B /* Daily_ThreeTests.swift */; };
@@ -23,7 +22,7 @@
 		EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339801A884A66008C0B1B /* ItemsTVC.swift */; };
 		EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339821A884A7A008C0B1B /* EditItemVC.swift */; };
 		EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54AE9F1A95774700A9A12D /* LPRTableView.swift */; };
-		ECAD1D011ABD0B09000208AC /* SecondTry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAD1D001ABD0B09000208AC /* SecondTry.storyboard */; };
+		ECAD1D011ABD0B09000208AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAD1D001ABD0B09000208AC /* Main.storyboard */; };
 		ECAD1D051ABDB4A2000208AC /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD1D041ABDB4A2000208AC /* SplitViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 		EC4339541A884508008C0B1B /* Daily Three.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Three.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4339581A884508008C0B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4339591A884508008C0B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC43395E1A884508008C0B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4339601A884508008C0B1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC4339631A884508008C0B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC4339691A884508008C0B1B /* Daily ThreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily ThreeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +56,7 @@
 		EC4339801A884A66008C0B1B /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
 		EC4339821A884A7A008C0B1B /* EditItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemVC.swift; sourceTree = "<group>"; };
 		EC54AE9F1A95774700A9A12D /* LPRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRTableView.swift; sourceTree = "<group>"; };
-		ECAD1D001ABD0B09000208AC /* SecondTry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondTry.storyboard; sourceTree = "<group>"; };
+		ECAD1D001ABD0B09000208AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ECAD1D041ABDB4A2000208AC /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,8 +117,7 @@
 				EC02EFB21AA636AC00D963EA /* ReminderVC.swift */,
 				EC4339801A884A66008C0B1B /* ItemsTVC.swift */,
 				EC4339821A884A7A008C0B1B /* EditItemVC.swift */,
-				EC43395D1A884508008C0B1B /* Main.storyboard */,
-				ECAD1D001ABD0B09000208AC /* SecondTry.storyboard */,
+				ECAD1D001ABD0B09000208AC /* Main.storyboard */,
 				EC4339571A884508008C0B1B /* Supporting Files */,
 			);
 			path = "Daily Three";
@@ -246,8 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECAD1D011ABD0B09000208AC /* SecondTry.storyboard in Resources */,
-				EC43395F1A884508008C0B1B /* Main.storyboard in Resources */,
+				ECAD1D011ABD0B09000208AC /* Main.storyboard in Resources */,
 				EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */,
 				EC4339611A884508008C0B1B /* Images.xcassets in Resources */,
 			);
@@ -318,14 +314,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EC43395D1A884508008C0B1B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC43395E1A884508008C0B1B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EC4339621A884508008C0B1B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -36,6 +36,7 @@ class DatesTVC: UITableViewController {
         
         currentDateIndex = 0
         
+        splitViewController?.view.backgroundColor = darkPrimary
         tableView.backgroundColor = lightPrimary
         navigationController?.navigationBar.translucent = false
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red:0.98, green:0.87, blue:0.57, alpha:1), NSFontAttributeName: UIFont(name: headerFont, size: 24)!]
@@ -56,7 +57,25 @@ class DatesTVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = listData[indexPath.row].formattedDate
+        // format date
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        let today = dateFormatter.stringFromDate(NSDate())
+        let yesterday = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: -86400))
+        let tomorrow = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: 86400))
+        
+        // switch
+        let formattedDate = listData[indexPath.row].formattedDate
+        switch formattedDate {
+        case today:
+            cell.textLabel?.text = "Today, \(removeDayOfWeek(formattedDate))"
+        case yesterday:
+            cell.textLabel?.text = "Yesterday, \(removeDayOfWeek(formattedDate))"
+        case tomorrow:
+            cell.textLabel?.text = "Tomorrow, \(removeDayOfWeek(formattedDate))"
+        default:
+            cell.textLabel?.text = formattedDate
+        }
         
         cell.accessoryView?.frame = CGRectMake(0, 0, 31, 31)
         if listData[indexPath.row].done == true {
@@ -66,6 +85,10 @@ class DatesTVC: UITableViewController {
         }
         
         cell.textLabel?.font = UIFont(name: primaryFont, size: 20)
+        
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = mediumPrimary
+        cell.selectedBackgroundView = bgColorView
         
         return cell
     }
@@ -119,6 +142,16 @@ class DatesTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
+    }
+    
+    // convert "Sunday, February 22" to "February 22"
+    func removeDayOfWeek(formattedDate: String) -> String {
+        
+        let dateInfo = formattedDate as String
+        let dateArray = dateInfo.componentsSeparatedByString(", ")
+        let date = dateArray[1]
+        
+        return date
     }
 
 }

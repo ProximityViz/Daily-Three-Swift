@@ -16,12 +16,12 @@ class PersistencyManager: NSObject {
     
     func getDateList() -> [DateData] {
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("listData") != nil {
-            dateList = retrieveDates()!
-            return dateList
-        } else {
-            return []
+        if NSUserDefaults.standardUserDefaults().objectForKey("listData") == nil {
+            // add DateData for today
+            addDate(DateData(unformattedDate: NSDate()))
         }
+        dateList = retrieveDates()!
+        return dateList
         
     }
     

@@ -29,14 +29,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
         
         listData = ListData.mainData().getDateList()
         
-        // format date
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEE, MMM d"
-        if listData.isEmpty {
-            title = ""
-        } else {
-            title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
-        }
+        setTitleText()
         
         showDataForDate(currentDateIndex)
         
@@ -57,16 +50,13 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
         
         navigationController?.navigationBar.translucent = false
         
-        // TODO: refactor this & rotated()
-        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
-            tableView.rowHeight = (tableView.frame.size.height - 31) / 3
-            tableView.reloadData()
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
-            tableView.rowHeight = (tableView.frame.size.height - 63) / 3
-            tableView.reloadData()
-        }
+        // set cell height
+        let statusBarSize = UIApplication.sharedApplication().statusBarFrame.size
+        let statusBarHeight = Swift.min(statusBarSize.width, statusBarSize.height)
+        let navBarHeight:CGFloat = navigationController!.navigationBar.frame.height
+        let barHeight = statusBarHeight + navBarHeight
+        tableView.rowHeight = (view.frame.size.height - barHeight) / 3
+        tableView.reloadData()
         
         currentItemIndex = 0
         
@@ -77,14 +67,23 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
     
     func rotated() {
         
-        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
-            tableView.rowHeight = tableView.frame.size.height / 3
-            tableView.reloadData()
-        }
+        setTitleText()
         
-        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation)) {
-            tableView.rowHeight = tableView.frame.size.height / 3
-            tableView.reloadData()
+        // reset cell height
+        tableView.rowHeight = tableView.frame.size.height / 3
+        tableView.reloadData()
+        
+    }
+    func setTitleText() {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM d"
+        if listData.isEmpty {
+            title = "Your Three Items"
+        } else if UIScreen.mainScreen().bounds.width < 480 {
+            title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
+        } else {
+            title = listData[currentDateIndex].formattedDate
         }
         
     }
