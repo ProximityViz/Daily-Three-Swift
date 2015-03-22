@@ -13,6 +13,7 @@
 		EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */; };
 		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
+		EC3AE0C31ABF525C00D7DA75 /* kastenfrosch__message.caf in Resources */ = {isa = PBXBuildFile; fileRef = EC3AE0C21ABF525C00D7DA75 /* kastenfrosch__message.caf */; };
 		EC43395A1A884508008C0B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339591A884508008C0B1B /* AppDelegate.swift */; };
 		EC4339611A884508008C0B1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4339601A884508008C0B1B /* Images.xcassets */; };
 		EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4339621A884508008C0B1B /* LaunchScreen.xib */; };
@@ -43,6 +44,7 @@
 		EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EC3A13091A8E7ADC00A0EB44 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
 		EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		EC3AE0C21ABF525C00D7DA75 /* kastenfrosch__message.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kastenfrosch__message.caf; sourceTree = "<group>"; };
 		EC4339541A884508008C0B1B /* Daily Three.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Three.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4339581A884508008C0B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4339591A884508008C0B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		EC4339571A884508008C0B1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EC3AE0C21ABF525C00D7DA75 /* kastenfrosch__message.caf */,
 				EC4339601A884508008C0B1B /* Images.xcassets */,
 				EC4339621A884508008C0B1B /* LaunchScreen.xib */,
 				EC4339591A884508008C0B1B /* AppDelegate.swift */,
@@ -246,6 +249,7 @@
 				ECAD1D011ABD0B09000208AC /* Main.storyboard in Resources */,
 				EC4339641A884508008C0B1B /* LaunchScreen.xib in Resources */,
 				EC4339611A884508008C0B1B /* Images.xcassets in Resources */,
+				EC3AE0C31ABF525C00D7DA75 /* kastenfrosch__message.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

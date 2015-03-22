@@ -118,6 +118,10 @@ class DatesTVC: UITableViewController {
             self.listData = ListData.mainData().getDateList()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
+            // clear ItemsTVC (for splitview)
+            currentDateIndex = -1
+            NSNotificationCenter.defaultCenter().postNotificationName("viewDate", object: currentDateIndex) // reload tableview of ItemsTVC
+            
         }
         
         var completeAction = UITableViewRowAction(style: .Normal, title: "☑") { (action, indexPath) -> Void in

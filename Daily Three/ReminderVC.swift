@@ -12,7 +12,7 @@ class ReminderVC: UIViewController {
 
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var notificationLabel: UILabel!
-    @IBOutlet weak var notificationTextField: UITextField!
+    @IBOutlet weak var notificationTextView: UITextView!
     @IBOutlet weak var timePicker: UIDatePicker!
     
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -42,11 +42,16 @@ class ReminderVC: UIViewController {
             timePicker.date = settings["notificationTime"] as NSDate
         }
         if settings["notificationText"] != nil {
-            notificationTextField.text = settings["notificationText"] as String
+            notificationTextView.text = settings["notificationText"] as String
         }
         
         navigationController?.navigationBar.translucent = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "saveReminder")
+        notificationTextView.autocapitalizationType = UITextAutocapitalizationType.Sentences
+        notificationTextView.layer.borderWidth = 1
+        notificationTextView.layer.borderColor = UIColor(red:0.9, green:0.9, blue:0.9, alpha:1).CGColor
+        notificationTextView.layer.cornerRadius = 5
+        notificationTextView.clipsToBounds = true
         
     }
     
@@ -56,13 +61,13 @@ class ReminderVC: UIViewController {
         if reminderSwitch.on {
             
             notificationLabel.hidden = false
-            notificationTextField.hidden = false
+            notificationTextView.hidden = false
             timePicker.hidden = false
             
         } else {
             
             notificationLabel.hidden = true
-            notificationTextField.hidden = true
+            notificationTextView.hidden = true
             timePicker.hidden = true
             
         }
@@ -78,7 +83,7 @@ class ReminderVC: UIViewController {
     @IBAction func switched(sender: AnyObject) {
         
         notificationLabel.hidden = notificationLabel.hidden == true ? false : true
-        notificationTextField.hidden = notificationTextField.hidden == true ? false : true
+        notificationTextView.hidden = notificationTextView.hidden == true ? false : true
         timePicker.hidden = timePicker.hidden == true ? false : true
         
     }
@@ -86,7 +91,7 @@ class ReminderVC: UIViewController {
     func saveReminder() {
         
         settings["notificationOn"] = reminderSwitch.on
-        settings["notificationText"] = notificationTextField.text
+        settings["notificationText"] = notificationTextView.text
         settings["notificationTime"] = timePicker.date
         defaults.setValue(settings, forKey: "settings")
         
@@ -107,9 +112,9 @@ class ReminderVC: UIViewController {
     
     func scheduleLocalNotification() {
         
-        let notificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Sound
-        let notificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
+            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: nil))
+        }
         
         let notification = UILocalNotification()
 //        notification.fireDate = NSDate(timeIntervalSinceNow: 5)
@@ -126,7 +131,7 @@ class ReminderVC: UIViewController {
             notification.alertBody = "What three accomplishments would make today awesome?"
         }
         //            notification.alertAction = "View List"
-        //            notification.soundName = "Glass.aiff"
+        notification.soundName = "kastenfrosch__message.caf"
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         

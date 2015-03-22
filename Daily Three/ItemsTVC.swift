@@ -12,7 +12,7 @@ var currentItemIndex:Int!
 var currentDateData : (titles:[String], details:[String], done:[Bool])?
 var listData = [DateData]()
 
-class ItemsTVC: UITableViewController, LPRTableViewDelegate {
+class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControllerDelegate {
     
     private var listData = [DateData]()
     
@@ -63,6 +63,15 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
         dataTable.delegate = self
         dataTable.dataSource = self
         dataTable.backgroundView = nil
+        
+        splitViewController?.delegate = self
+        
+    }
+    
+    // when iPad is in portrait mode, always show both halves of splitview
+    func splitViewController(svc: UISplitViewController, shouldHideViewController vc: UIViewController, inOrientation orientation: UIInterfaceOrientation) -> Bool {
+        
+        return false
     }
     
     func rotated() {
@@ -78,7 +87,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate {
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEE, MMM d"
-        if listData.isEmpty {
+        if listData.isEmpty || currentDateIndex == -1 {
             title = "Your Three Items"
         } else if UIScreen.mainScreen().bounds.width < 480 {
             title = dateFormatter.stringFromDate(listData[currentDateIndex].unformattedDate)
