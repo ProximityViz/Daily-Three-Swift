@@ -108,14 +108,14 @@ class DateData: NSObject {
 func saveDates(dates: [DateData]) {
     
     let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(dates as NSArray)
-    defaults.setObject(archivedObject, forKey: "listData")
-    defaults.synchronize()
+    defaults?.setObject(archivedObject, forKey: "listData")
+    defaults?.synchronize()
     
 }
 
 func retrieveDates() -> [DateData]? {
     
-    if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("listData") as? NSData {
+    if let unarchivedObject = defaults?.objectForKey("listData") as? NSData {
         
         return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [DateData]
         

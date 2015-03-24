@@ -8,7 +8,7 @@
 
 import UIKit
 
-let defaults = NSUserDefaults.standardUserDefaults()
+let defaults = NSUserDefaults(suiteName: "group.com.proximityviz.dailyThreeGroup")
 
 class PersistencyManager: NSObject {
     
@@ -16,7 +16,7 @@ class PersistencyManager: NSObject {
     
     func getDateList() -> [DateData] {
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("listData") == nil {
+        if defaults?.objectForKey("listData") == nil {
             // add DateData for today
             addDate(DateData(unformattedDate: NSDate()))
         }
