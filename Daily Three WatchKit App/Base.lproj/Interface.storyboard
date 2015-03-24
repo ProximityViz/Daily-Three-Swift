@@ -15,7 +15,7 @@
                                 <tableRow identifier="itemsTRC" id="oHI-Gi-RSJ" customClass="ItemsTRC" customModule="Daily_Three_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="47" alignment="left" id="inU-oh-pxb">
                                         <items>
-                                            <label width="1" widthAdjustment="-38" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" id="3PX-EL-Xu4">
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" id="3PX-EL-Xu4">
                                                 <color key="textColor" red="0.74901960784313726" green="0.27843137254901962" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </label>
                                             <imageView width="30" height="30" alignment="right" verticalAlignment="center" hidden="YES" image="Checkmark" id="ONO-Kn-TyI"/>

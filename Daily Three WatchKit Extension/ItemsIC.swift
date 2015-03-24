@@ -11,10 +11,11 @@ import Foundation
 
 class ItemsIC: WKInterfaceController {
     
-    var toDoItems = ["item 1", "item 2", "item 3"]
+    var toDoItems = ["List items", "Save data", "Notification"]
     var doneItems = [false, false, false]
     
-    var defaults = NSUserDefaults(suiteName: "group.com.proximityviz.dailyThreeGroup")
+    var listData = [DateData]()
+    var currentDateData : (titles:[String], details:[String])?
     
     @IBOutlet weak var table: WKInterfaceTable!
     
@@ -25,12 +26,24 @@ class ItemsIC: WKInterfaceController {
             let settings = defaults?.objectForKey("settings") as [String:AnyObject]
             println(settings)
         }
+
+        listData = ListData.mainData().getDateList()
+        println(listData.count)
         
-        //        if let unarchivedObject = defaults?.objectForKey("listData") as? NSData {
-        //
-        //            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [DateData]
-        //
-        //        }
+        for date in listData {
+            
+            println(date.dde_tableRepresentation())
+            println(date.formattedDate)
+            
+            // if currentDate equals the date of this date,
+            // currentDateData = date.dde_tableRepresentation()
+            // otherwise, currentDateData = [empty]
+            
+        }
+        
+        // get the object from listData that has a date of today
+        // get that object's to-do list items and list them in the table
+        // be able to mark items done
         
         loadTableData()
         
@@ -46,8 +59,10 @@ class ItemsIC: WKInterfaceController {
             row.itemTitleLabel.setText(item)
             if doneItems[index] {
                 row.itemCompletedImage.setHidden(false)
+//                row.itemTitleLabel.setWidth(100) // get it to change width to leave space for checkmark
             } else {
                 row.itemCompletedImage.setHidden(true)
+                // change width to full width
             }
             
         }

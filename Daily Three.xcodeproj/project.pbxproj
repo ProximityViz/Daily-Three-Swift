@@ -29,6 +29,9 @@
 		EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397E1A884A4C008C0B1B /* NewDateVC.swift */; };
 		EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339801A884A66008C0B1B /* ItemsTVC.swift */; };
 		EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339821A884A7A008C0B1B /* EditItemVC.swift */; };
+		EC487B581AC0F6A00032B8A2 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
+		EC487B5B1AC0FFAD0032B8A2 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397A1A88453B008C0B1B /* ListData.swift */; };
+		EC487B5C1AC0FFC40032B8A2 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
 		EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54AE9F1A95774700A9A12D /* LPRTableView.swift */; };
 		EC556C771AC0E7EB005604E6 /* ItemsTRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC556C761AC0E7EB005604E6 /* ItemsTRC.swift */; };
 		EC556C791AC0F161005604E6 /* ItemsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC556C781AC0F161005604E6 /* ItemsIC.swift */; };
@@ -461,9 +464,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC556C791AC0F161005604E6 /* ItemsIC.swift in Sources */,
+				EC487B581AC0F6A00032B8A2 /* DateData.swift in Sources */,
 				EC556C771AC0E7EB005604E6 /* ItemsTRC.swift in Sources */,
 				EC14C2511AC0C59400C9AAFA /* NotificationController.swift in Sources */,
 				EC14C2531AC0C59400C9AAFA /* GlanceController.swift in Sources */,
+				EC487B5B1AC0FFAD0032B8A2 /* ListData.swift in Sources */,
+				EC487B5C1AC0FFC40032B8A2 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

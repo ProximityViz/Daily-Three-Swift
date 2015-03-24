@@ -8,8 +8,6 @@
 
 import UIKit
 
-let defaults = NSUserDefaults(suiteName: "group.com.proximityviz.dailyThreeGroup")
-
 class PersistencyManager: NSObject {
     
     private var dateList = [DateData]()

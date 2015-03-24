@@ -10,6 +10,8 @@
 
 import UIKit
 
+let defaults = NSUserDefaults(suiteName: "group.com.proximityviz.dailyThreeGroup")
+
 extension DateData {
     // date data extension
     func dde_tableRepresentation() -> (titles:[String], details:[String], done:[Bool]) {
@@ -107,6 +109,9 @@ class DateData: NSObject {
 
 func saveDates(dates: [DateData]) {
     
+    // this line needs to be included before archiving or unarchiving when using WatchKit
+    NSKeyedArchiver.setClassName("DateData", forClass: DateData.self)
+    
     let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(dates as NSArray)
     defaults?.setObject(archivedObject, forKey: "listData")
     defaults?.synchronize()
@@ -116,6 +121,9 @@ func saveDates(dates: [DateData]) {
 func retrieveDates() -> [DateData]? {
     
     if let unarchivedObject = defaults?.objectForKey("listData") as? NSData {
+        
+        // this line needs to be included before archiving or unarchiving when using WatchKit
+        NSKeyedUnarchiver.setClass(DateData.self, forClassName: "DateData")
         
         return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [DateData]
         
