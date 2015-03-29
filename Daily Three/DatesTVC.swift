@@ -55,14 +55,14 @@ class DatesTVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        // format date
+        // label Today, Yesterday, Tomorrow
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
+        // FIXME: It will say today if the day, month, and date are the same but years are different
         let today = dateFormatter.stringFromDate(NSDate())
         let yesterday = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: -86400))
         let tomorrow = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: 86400))
         
-        // switch
         let formattedDate = listData[indexPath.row].formattedDate
         switch formattedDate {
         case today:

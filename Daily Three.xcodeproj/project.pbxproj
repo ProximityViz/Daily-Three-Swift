@@ -32,8 +32,8 @@
 		EC487B581AC0F6A00032B8A2 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC487B5B1AC0FFAD0032B8A2 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397A1A88453B008C0B1B /* ListData.swift */; };
 		EC487B5C1AC0FFC40032B8A2 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
+		EC4C27671AC8AFB200187944 /* DatesIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C27661AC8AFB200187944 /* DatesIC.swift */; };
 		EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54AE9F1A95774700A9A12D /* LPRTableView.swift */; };
-		EC556C771AC0E7EB005604E6 /* ItemsTRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC556C761AC0E7EB005604E6 /* ItemsTRC.swift */; };
 		EC556C791AC0F161005604E6 /* ItemsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC556C781AC0F161005604E6 /* ItemsIC.swift */; };
 		ECAD1D011ABD0B09000208AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAD1D001ABD0B09000208AC /* Main.storyboard */; };
 		ECAD1D051ABDB4A2000208AC /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD1D041ABDB4A2000208AC /* SplitViewController.swift */; };
@@ -109,8 +109,8 @@
 		EC43397E1A884A4C008C0B1B /* NewDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDateVC.swift; sourceTree = "<group>"; };
 		EC4339801A884A66008C0B1B /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
 		EC4339821A884A7A008C0B1B /* EditItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemVC.swift; sourceTree = "<group>"; };
+		EC4C27661AC8AFB200187944 /* DatesIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesIC.swift; sourceTree = "<group>"; };
 		EC54AE9F1A95774700A9A12D /* LPRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRTableView.swift; sourceTree = "<group>"; };
-		EC556C761AC0E7EB005604E6 /* ItemsTRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTRC.swift; sourceTree = "<group>"; };
 		EC556C781AC0F161005604E6 /* ItemsIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsIC.swift; sourceTree = "<group>"; };
 		ECAD1D001ABD0B09000208AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ECAD1D041ABDB4A2000208AC /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				EC14C26F1AC0C6B200C9AAFA /* Daily Three WatchKit Extension.entitlements */,
+				EC4C27661AC8AFB200187944 /* DatesIC.swift */,
 				EC556C781AC0F161005604E6 /* ItemsIC.swift */,
-				EC556C761AC0E7EB005604E6 /* ItemsTRC.swift */,
 				EC14C2501AC0C59400C9AAFA /* NotificationController.swift */,
 				EC14C2521AC0C59400C9AAFA /* GlanceController.swift */,
 				EC14C2541AC0C59400C9AAFA /* Images.xcassets */,
@@ -465,9 +465,9 @@
 			files = (
 				EC556C791AC0F161005604E6 /* ItemsIC.swift in Sources */,
 				EC487B581AC0F6A00032B8A2 /* DateData.swift in Sources */,
-				EC556C771AC0E7EB005604E6 /* ItemsTRC.swift in Sources */,
 				EC14C2511AC0C59400C9AAFA /* NotificationController.swift in Sources */,
 				EC14C2531AC0C59400C9AAFA /* GlanceController.swift in Sources */,
+				EC4C27671AC8AFB200187944 /* DatesIC.swift in Sources */,
 				EC487B5B1AC0FFAD0032B8A2 /* ListData.swift in Sources */,
 				EC487B5C1AC0FFC40032B8A2 /* PersistencyManager.swift in Sources */,
 			);

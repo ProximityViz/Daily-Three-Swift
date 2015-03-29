@@ -31,7 +31,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
         setTitleText()
         
-        showDataForDate(currentDateIndex)
+        currentDateData = getDataForDate(currentDateIndex, listData)
         
         tableView.reloadData()
     
@@ -100,16 +100,6 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
     }
     
-    func showDataForDate(dateIndex: Int) {
-        // defensive
-        if (dateIndex < listData.count && dateIndex > -1) {
-            let date = listData[dateIndex]
-            currentDateData = date.dde_tableRepresentation()
-        } else {
-            currentDateData = nil
-        }
-    }
-    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -149,7 +139,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         cell.frame.size.height = 100
         
         listData = ListData.mainData().getDateList()
-        showDataForDate(currentDateIndex)
+        currentDateData = getDataForDate(currentDateIndex, listData)
         
         if let dateData = currentDateData {
             
@@ -182,7 +172,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         listData = ListData.mainData().getDateList()
-        showDataForDate(currentDateIndex)
+        currentDateData = getDataForDate(currentDateIndex, listData)
         currentItemIndex = indexPath.row
         
     }

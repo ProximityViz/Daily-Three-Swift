@@ -133,6 +133,17 @@ func retrieveDates() -> [DateData]? {
     
 }
 
+func getDataForDate(dateIndex: Int, listData: [DateData]) -> (titles:[String], details:[String], done:[Bool]) {
+    
+    // defensive
+    if (dateIndex < listData.count && dateIndex > -1) {
+        let date = listData[dateIndex]
+        return date.dde_tableRepresentation()
+    } else {
+        return ([],[],[])
+    }
+}
+
 func markItemDone(index: Int, currentDateIndex: Int, tableView: UITableView?, indexPath: NSIndexPath?) {
     
     switch index {

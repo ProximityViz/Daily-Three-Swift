@@ -9,10 +9,14 @@
 import WatchKit
 import Foundation
 
-class ItemsIC: WKInterfaceController {
+class ItemsTRC: NSObject {
     
-    var toDoItems = ["List items", "Save data", "Notification"]
-    var doneItems = [false, false, false]
+    @IBOutlet weak var itemTitleLabel: WKInterfaceLabel!
+    @IBOutlet weak var itemCompletedImage: WKInterfaceImage!
+    
+}
+
+class ItemsIC: WKInterfaceController {
     
     var listData = [DateData]()
     var currentDateData : (titles:[String], details:[String], done:[Bool])!
@@ -28,47 +32,11 @@ class ItemsIC: WKInterfaceController {
             println(settings)
         }
         
-        findDateInData()
-        
-        // handle what should happen if today doesn't have any data
-        if currentDateData == nil {
-            
-            ListData.mainData().addDate(DateData(unformattedDate: NSDate()))
-            // run again so index is correct
-            findDateInData()
-            
-        }
-        
-    }
-    
-    func findDateInData() {
-        
         listData = ListData.mainData().getDateList()
         
-        println("find date")
+        currentDateData = getDataForDate(currentWatchDateIndex, listData)
         
-        currentDateIndex = 0
-        
-        for date in listData {
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "EEEE, MMMM d"
-            let today = dateFormatter.stringFromDate(NSDate())
-            
-            let yearFormatter = NSDateFormatter()
-            yearFormatter.dateFormat = "yyyy"
-            
-            // see if year and date are the same
-            if today == date.formattedDate && yearFormatter.stringFromDate(NSDate()) == yearFormatter.stringFromDate(date.unformattedDate) {
-                currentDateData = date.dde_tableRepresentation()
-                println("today")
-                loadTableData()
-                break
-            }
-            
-            currentDateIndex++
-            
-        }
+        loadTableData()
         
     }
     
@@ -84,10 +52,10 @@ class ItemsIC: WKInterfaceController {
             row.itemTitleLabel.setText(item)
             if done[index] {
                 row.itemCompletedImage.setHidden(false)
-//                row.itemTitleLabel.setWidth(100) // get it to change width to leave space for checkmark
+                row.itemTitleLabel.setWidth(100)
             } else {
                 row.itemCompletedImage.setHidden(true)
-                // change width to full width
+                row.itemTitleLabel.setWidth(150)
             }
             
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="azy-WR-32a">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
@@ -15,8 +15,9 @@
                                 <tableRow identifier="itemsTRC" id="oHI-Gi-RSJ" customClass="ItemsTRC" customModule="Daily_Three_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="47" alignment="left" id="inU-oh-pxb">
                                         <items>
-                                            <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" id="3PX-EL-Xu4">
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" numberOfLines="3" id="3PX-EL-Xu4">
                                                 <color key="textColor" red="0.74901960784313726" green="0.27843137254901962" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                             </label>
                                             <imageView width="30" height="30" alignment="right" verticalAlignment="center" hidden="YES" image="Checkmark" id="ONO-Kn-TyI"/>
                                         </items>
@@ -38,14 +39,40 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="282" y="347"/>
         </scene>
-        <!--Interface Controller-->
+        <!--DatesIC-->
         <scene sceneID="ypX-YN-6HX">
             <objects>
-                <controller id="azy-WR-32a"/>
+                <controller id="azy-WR-32a" customClass="DatesIC" customModule="Daily_Three_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="uN6-Ip-BQK">
+                            <items>
+                                <tableRow identifier="datesTRC" id="N99-gC-c9S" customClass="DatesTRC" customModule="Daily_Three_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="xPI-rw-sPE">
+                                        <items>
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="center" id="Ss5-gd-Hbc">
+                                                <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.87058823529411766" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="AgC-eL-Hgc" kind="push" id="fcK-sz-mvl"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dateTitleLabel" destination="Ss5-gd-Hbc" id="ofN-t8-0aL"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="uN6-Ip-BQK" id="iDz-RO-c7S"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="423" y="347"/>
+            <point key="canvasLocation" x="70" y="347"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
