@@ -50,12 +50,16 @@ class ItemsIC: WKInterfaceController {
         currentDateIndex = 0
         
         for date in listData {
-            // FIXME: what if it's the same weekday, day, and month, but a different year?
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "EEEE, MMMM d"
-            let today = formatter.stringFromDate(NSDate())
             
-            if today == date.formattedDate {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEEE, MMMM d"
+            let today = dateFormatter.stringFromDate(NSDate())
+            
+            let yearFormatter = NSDateFormatter()
+            yearFormatter.dateFormat = "yyyy"
+            
+            // see if year and date are the same
+            if today == date.formattedDate && yearFormatter.stringFromDate(NSDate()) == yearFormatter.stringFromDate(date.unformattedDate) {
                 currentDateData = date.dde_tableRepresentation()
                 println("today")
                 loadTableData()
