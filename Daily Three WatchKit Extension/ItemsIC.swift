@@ -15,7 +15,8 @@ class ItemsIC: WKInterfaceController {
     var doneItems = [false, false, false]
     
     var listData = [DateData]()
-    var currentDateData : (titles:[String], details:[String])?
+    var currentDateData : (titles:[String], details:[String], done:[Bool])!
+    var currentDateIndex = 0
     
     @IBOutlet weak var table: WKInterfaceTable!
     
@@ -26,38 +27,58 @@ class ItemsIC: WKInterfaceController {
             let settings = defaults?.objectForKey("settings") as [String:AnyObject]
             println(settings)
         }
-
-        listData = ListData.mainData().getDateList()
-        println(listData.count)
         
-        for date in listData {
+        findDateInData()
+        
+        // handle what should happen if today doesn't have any data
+        if currentDateData == nil {
             
-            println(date.dde_tableRepresentation())
-            println(date.formattedDate)
-            
-            // if currentDate equals the date of this date,
-            // currentDateData = date.dde_tableRepresentation()
-            // otherwise, currentDateData = [empty]
+            ListData.mainData().addDate(DateData(unformattedDate: NSDate()))
+            // run again so index is correct
+            findDateInData()
             
         }
         
-        // get the object from listData that has a date of today
-        // get that object's to-do list items and list them in the table
-        // be able to mark items done
+    }
+    
+    func findDateInData() {
         
-        loadTableData()
+        listData = ListData.mainData().getDateList()
+        
+        println("find date")
+        
+        currentDateIndex = 0
+        
+        for date in listData {
+            // FIXME: what if it's the same weekday, day, and month, but a different year?
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "EEEE, MMMM d"
+            let today = formatter.stringFromDate(NSDate())
+            
+            if today == date.formattedDate {
+                currentDateData = date.dde_tableRepresentation()
+                println("today")
+                loadTableData()
+                break
+            }
+            
+            currentDateIndex++
+            
+        }
         
     }
     
     func loadTableData() {
         
-        table.setNumberOfRows(toDoItems.count, withRowType: "itemsTRC")
+        let (titles, details, done) = currentDateData!
         
-        for (index, item) in enumerate(toDoItems) {
+        table.setNumberOfRows(titles.count, withRowType: "itemsTRC")
+        
+        for (index, item) in enumerate(titles) {
             
             let row = table.rowControllerAtIndex(index) as ItemsTRC
             row.itemTitleLabel.setText(item)
-            if doneItems[index] {
+            if done[index] {
                 row.itemCompletedImage.setHidden(false)
 //                row.itemTitleLabel.setWidth(100) // get it to change width to leave space for checkmark
             } else {
@@ -71,9 +92,10 @@ class ItemsIC: WKInterfaceController {
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
         
-        doneItems[rowIndex] = doneItems[rowIndex] ? false : true
-        // save in Defaults
-        // synchronize
+        currentDateData.done[rowIndex] = currentDateData.done[rowIndex] ? false : true
+        
+        markItemDone(rowIndex, currentDateIndex, nil, nil)
+        
         loadTableData()
         
     }

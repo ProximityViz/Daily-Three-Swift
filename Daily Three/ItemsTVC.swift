@@ -41,7 +41,10 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         super.viewDidLoad()
         
         tableView.backgroundColor = lightPrimary
-        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        // check that OS is >= 8
+        if (splitViewController?.respondsToSelector("displayModeButtonItem") != nil) {
+            navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        }
         navigationItem.leftItemsSupplementBackButton = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
@@ -190,39 +193,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
             
             tableView.editing = false
             
-            switch indexPath.row {
-                
-            case 0:
-                if (ListData.mainData().getDateList()[currentDateIndex].topDone == true) {
-                    ListData.mainData().getDateList()[currentDateIndex].topDone = false
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
-                } else {
-                    ListData.mainData().getDateList()[currentDateIndex].topDone = true
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
-                }
-                
-            case 1:
-                if (ListData.mainData().getDateList()[currentDateIndex].middleDone == true) {
-                    ListData.mainData().getDateList()[currentDateIndex].middleDone = false
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
-                } else {
-                    ListData.mainData().getDateList()[currentDateIndex].middleDone = true
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
-                }
-                
-            default:
-                if (ListData.mainData().getDateList()[currentDateIndex].bottomDone == true) {
-                    ListData.mainData().getDateList()[currentDateIndex].bottomDone = false
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
-                } else {
-                    ListData.mainData().getDateList()[currentDateIndex].bottomDone = true
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
-                }
-                
-                
-            }
-            
-            ListData.mainData().setDateList()
+            markItemDone(indexPath.row, currentDateIndex, tableView, indexPath)
             
         }
         

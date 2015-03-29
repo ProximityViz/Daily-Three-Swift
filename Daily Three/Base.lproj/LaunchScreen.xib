@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch Screen" translatesAutoresizingMaskIntoConstraints="NO" id="sIA-Wb-Y6e">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch Screen" translatesAutoresizingMaskIntoConstraints="NO" id="sIA-Wb-Y6e">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.87058823529411766" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
@@ -29,6 +29,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Launch Screen" width="1024" height="1024"/>
+        <image name="Launch Screen" width="1014" height="1800"/>
     </resources>
 </document>
