@@ -41,7 +41,10 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         super.viewDidLoad()
         
         tableView.backgroundColor = lightPrimary
-        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        // check that OS is >= 8
+        if (!respondsToSelector("displayModeButtonItem")) {
+            navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        }
         navigationItem.leftItemsSupplementBackButton = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)

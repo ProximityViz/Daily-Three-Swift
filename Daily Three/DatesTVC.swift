@@ -32,8 +32,6 @@ class DatesTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        splitViewController?.preferredPrimaryColumnWidthFraction = 0.5 // FIXME: not working
-        
         currentDateIndex = 0
         
         splitViewController?.view.backgroundColor = darkPrimary
@@ -84,6 +82,7 @@ class DatesTVC: UITableViewController {
             cell.accessoryView = UIImageView(image: UIImage(named: "Disclosure"))
         }
         
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.textLabel?.font = UIFont(name: primaryFont, size: 20)
         
         var bgColorView = UIView()
