@@ -18,6 +18,7 @@
 		EC14C2611AC0C59400C9AAFA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC14C25F1AC0C59400C9AAFA /* Interface.storyboard */; };
 		EC14C2631AC0C59400C9AAFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC14C2621AC0C59400C9AAFA /* Images.xcassets */; };
 		EC14C2661AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EC14C2491AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EC3286921AC8C83300DD827B /* ItemIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3286911AC8C83300DD827B /* ItemIC.swift */; };
 		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
 		EC3AE0C31ABF525C00D7DA75 /* kastenfrosch__message.caf in Resources */ = {isa = PBXBuildFile; fileRef = EC3AE0C21ABF525C00D7DA75 /* kastenfrosch__message.caf */; };
@@ -94,6 +95,7 @@
 		EC14C2621AC0C59400C9AAFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC14C26E1AC0C68000C9AAFA /* Daily Three.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Daily Three.entitlements"; sourceTree = "<group>"; };
 		EC14C26F1AC0C6B200C9AAFA /* Daily Three WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Daily Three WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		EC3286911AC8C83300DD827B /* ItemIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemIC.swift; sourceTree = "<group>"; };
 		EC3A13091A8E7ADC00A0EB44 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
 		EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		EC3AE0C21ABF525C00D7DA75 /* kastenfrosch__message.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kastenfrosch__message.caf; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				EC14C26F1AC0C6B200C9AAFA /* Daily Three WatchKit Extension.entitlements */,
 				EC4C27661AC8AFB200187944 /* DatesIC.swift */,
 				EC556C781AC0F161005604E6 /* ItemsIC.swift */,
+				EC3286911AC8C83300DD827B /* ItemIC.swift */,
 				EC14C2501AC0C59400C9AAFA /* NotificationController.swift */,
 				EC14C2521AC0C59400C9AAFA /* GlanceController.swift */,
 				EC14C2541AC0C59400C9AAFA /* Images.xcassets */,
@@ -465,6 +468,7 @@
 			files = (
 				EC556C791AC0F161005604E6 /* ItemsIC.swift in Sources */,
 				EC487B581AC0F6A00032B8A2 /* DateData.swift in Sources */,
+				EC3286921AC8C83300DD827B /* ItemIC.swift in Sources */,
 				EC14C2511AC0C59400C9AAFA /* NotificationController.swift in Sources */,
 				EC14C2531AC0C59400C9AAFA /* GlanceController.swift in Sources */,
 				EC4C27671AC8AFB200187944 /* DatesIC.swift in Sources */,

@@ -18,10 +18,6 @@ class ItemsTRC: NSObject {
 
 class ItemsIC: WKInterfaceController {
     
-    var listData = [DateData]()
-    var currentDateData : (titles:[String], details:[String], done:[Bool])!
-    var currentDateIndex = 0
-    
     @IBOutlet weak var table: WKInterfaceTable!
     
     override func awakeWithContext(context: AnyObject?) {
@@ -32,17 +28,29 @@ class ItemsIC: WKInterfaceController {
             println(settings)
         }
         
-        listData = ListData.mainData().getDateList()
+        watchListData = ListData.mainData().getDateList()
         
-        currentDateData = getDataForDate(currentWatchDateIndex, listData)
+        currentWatchDateData = getDataForDate(currentWatchDateIndex, watchListData)
+        
+        loadTableData()
+        
+    }
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
         
         loadTableData()
         
     }
     
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
+    }
+    
     func loadTableData() {
         
-        let (titles, details, done) = currentDateData!
+        let (titles, details, done) = currentWatchDateData!
         
         table.setNumberOfRows(titles.count, withRowType: "itemsTRC")
         
@@ -62,25 +70,13 @@ class ItemsIC: WKInterfaceController {
         
     }
     
-    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         
-        currentDateData.done[rowIndex] = currentDateData.done[rowIndex] ? false : true
+        currentWatchItemIndex = rowIndex
         
-        markItemDone(rowIndex, currentDateIndex, nil, nil)
-        
-        loadTableData()
-        
+        return nil
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
     
 }
 

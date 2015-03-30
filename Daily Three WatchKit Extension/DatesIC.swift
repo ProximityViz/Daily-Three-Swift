@@ -9,7 +9,10 @@
 import WatchKit
 import Foundation
 
+var watchListData = [DateData]()
+var currentWatchDateData : (titles:[String], details:[String], done:[Bool])!
 var currentWatchDateIndex = 0
+var currentWatchItemIndex = 0
 
 class DatesTRC: NSObject {
     
@@ -19,24 +22,34 @@ class DatesTRC: NSObject {
 
 class DatesIC: WKInterfaceController {
     
-    var listData = [DateData]()
+    var watchListData = [DateData]()
     
     @IBOutlet weak var table: WKInterfaceTable!
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        listData = ListData.mainData().getDateList()
+        watchListData = ListData.mainData().getDateList()
         
         loadTableData()
         
     }
     
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+    }
+    
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
+    }
+    
     func loadTableData() {
         
-        table.setNumberOfRows(listData.count, withRowType: "datesTRC")
+        table.setNumberOfRows(watchListData.count, withRowType: "datesTRC")
         
-        for (index, item) in enumerate(listData) {
+        for (index, item) in enumerate(watchListData) {
             
             // add today, tomorrow, yesterday code
             
@@ -55,16 +68,6 @@ class DatesIC: WKInterfaceController {
         currentWatchDateIndex = rowIndex
         
         return nil
-    }
-    
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
     }
 
 }

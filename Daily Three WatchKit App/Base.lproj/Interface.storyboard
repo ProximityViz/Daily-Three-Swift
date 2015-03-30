@@ -24,6 +24,9 @@
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.87058823529411766" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <variation key="device=watch38mm" height="47"/>
                                         <variation key="device=watch42mm" height="55"/>
+                                        <connections>
+                                            <segue destination="9Kw-Rn-cBj" kind="push" id="ZwB-bJ-eCd"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="itemCompletedImage" destination="ONO-Kn-TyI" id="mcQ-lt-wou"/>
@@ -40,6 +43,35 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="282" y="347"/>
+        </scene>
+        <!--ItemIC-->
+        <scene sceneID="J71-ZI-PzT">
+            <objects>
+                <controller id="9Kw-Rn-cBj" customClass="ItemIC" customModule="Daily_Three_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Label" numberOfLines="3" id="4Nz-Hd-jeJ">
+                            <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label width="1" alignment="left" text="Label" numberOfLines="6" id="cVp-nl-5qV">
+                            <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <switch width="1" alignment="center" verticalAlignment="bottom" title="Complete" id="tJc-Xy-cwa">
+                            <color key="titleColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="completeTask:" destination="9Kw-Rn-cBj" id="s3g-cv-MPP"/>
+                            </connections>
+                        </switch>
+                    </items>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.87058823529999996" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="cVp-nl-5qV" id="Pvy-df-m2x"/>
+                        <outlet property="itemCompleteSwitch" destination="tJc-Xy-cwa" id="mXd-ui-lYN"/>
+                        <outlet property="titleLabel" destination="4Nz-Hd-jeJ" id="8Oc-39-dgs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="495" y="345"/>
         </scene>
         <!--DatesIC-->
         <scene sceneID="ypX-YN-6HX">
