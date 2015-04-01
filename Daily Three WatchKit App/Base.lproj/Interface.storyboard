@@ -19,7 +19,7 @@
                                                 <color key="textColor" red="0.74901960784313726" green="0.27843137254901962" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                             </label>
-                                            <imageView width="30" height="30" alignment="right" verticalAlignment="center" hidden="YES" image="Checkmark" id="ONO-Kn-TyI"/>
+                                            <imageView width="30" height="30" alignment="right" verticalAlignment="center" image="Checkmark" id="ONO-Kn-TyI"/>
                                         </items>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.87058823529411766" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <variation key="device=watch38mm" height="47"/>
@@ -109,28 +109,45 @@
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Daily_Three_WatchKit_App" customModuleProvider="target">
+                <glanceController spacing="0.0" topTemplateType="groupLeftLarge" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Daily_Three_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="J6Q-On-4xm">
+                            <items>
+                                <imageView alignment="left" image="Checkmark" id="nFt-GW-lhI"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Today" id="IO0-FC-KF2"/>
+                        <label alignment="left" hidden="YES" text="Label" id="UYE-V1-vcV"/>
+                        <label alignment="left" hidden="YES" text="Label" id="WQt-Uz-UF6"/>
                         <group alignment="left" id="uCw-4Q-Ouw">
                             <items>
                                 <table alignment="left" id="y9N-kJ-ZTR">
                                     <items>
-                                        <tableRow id="BvN-qC-Nfr">
-                                            <group key="rootItem" width="1" alignment="left" id="Yz1-Zj-Amk"/>
-                                        </tableRow>
-                                        <tableRow id="7wg-rt-pkc">
-                                            <group key="rootItem" width="1" alignment="left" id="VF1-Yp-zoO"/>
-                                        </tableRow>
-                                        <tableRow id="XUq-ku-YV0">
-                                            <group key="rootItem" width="1" alignment="left" id="4T1-5s-9bc"/>
+                                        <tableRow identifier="glanceTRC" id="BvN-qC-Nfr" customClass="GlanceTRC" customModule="Daily_Three_WatchKit_Extension">
+                                            <group key="rootItem" width="1" height="35" alignment="left" id="Yz1-Zj-Amk">
+                                                <items>
+                                                    <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" id="OWp-b8-1lA">
+                                                        <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <imageView width="30" height="30" alignment="left" verticalAlignment="center" hidden="YES" image="Checkmark" id="iNa-Nl-gQF"/>
+                                                </items>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.87058823529999996" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </group>
+                                            <connections>
+                                                <outlet property="itemCompletedImage" destination="iNa-Nl-gQF" id="B4c-xV-h7r"/>
+                                                <outlet property="itemTitleLabel" destination="OWp-b8-1lA" id="RgC-YD-1aa"/>
+                                            </connections>
                                         </tableRow>
                                     </items>
+                                    <color key="backgroundColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </table>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="table" destination="y9N-kJ-ZTR" id="2lq-Ey-cwu"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
