@@ -113,7 +113,7 @@
                     <items>
                         <group alignment="left" id="J6Q-On-4xm">
                             <items>
-                                <imageView alignment="left" image="Checkmark" id="nFt-GW-lhI"/>
+                                <imageView alignment="left" image="Watch" id="nFt-GW-lhI"/>
                             </items>
                         </group>
                         <label alignment="left" text="Today" id="IO0-FC-KF2"/>
