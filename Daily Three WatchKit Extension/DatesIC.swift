@@ -23,6 +23,8 @@ class DatesTRC: NSObject {
 class DatesIC: WKInterfaceController {
     
     var watchListData = [DateData]()
+    var todayDateIndex = 0
+    var tomorrowDateIndex = 0
     
     @IBOutlet weak var table: WKInterfaceTable!
 
@@ -51,13 +53,41 @@ class DatesIC: WKInterfaceController {
         
         for (index, item) in enumerate(watchListData) {
             
-            // add today, tomorrow, yesterday code
-            
             let row = table.rowControllerAtIndex(index) as DatesTRC
             
+            // label Today, Yesterday, Tomorrow
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "EEE, MMM d"
-            row.dateTitleLabel.setText(dateFormatter.stringFromDate(item.unformattedDate))
+            dateFormatter.dateFormat = "EEEE, MMMM d"
+            
+            let today = dateFormatter.stringFromDate(NSDate())
+            let yesterday = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: -86400))
+            let tomorrow = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: 86400))
+            
+            let yearFormatter = NSDateFormatter()
+            yearFormatter.dateFormat = "yyyy"
+            
+            let formattedDate = item.formattedDate
+            let formattedYear = yearFormatter.stringFromDate(item.unformattedDate)
+            // see if year and date are the same
+            if yearFormatter.stringFromDate(NSDate()) == formattedYear {
+                
+                switch formattedDate {
+                case today:
+                    row.dateTitleLabel.setText("Today, \(removeDayOfWeek(formattedDate))")
+                    println(item)
+                    todayDateIndex = index
+                case yesterday:
+                    row.dateTitleLabel.setText("Yesterday, \(removeDayOfWeek(formattedDate))")
+                case tomorrow:
+                    row.dateTitleLabel.setText("Tomorrow, \(removeDayOfWeek(formattedDate))")
+                    tomorrowDateIndex = index
+                default:
+                    row.dateTitleLabel.setText(formattedDate)
+                }
+                
+            } else {
+                row.dateTitleLabel.setText("\(formattedDate), \(formattedYear)")
+            }
             
         }
         
@@ -68,6 +98,21 @@ class DatesIC: WKInterfaceController {
         currentWatchDateIndex = rowIndex
         
         return nil
+    }
+    
+    override func handleActionWithIdentifier(identifier: String?, forRemoteNotification remoteNotification: [NSObject : AnyObject]) {
+        
+        // only send them to today or tomorrow if that day has data
+        if identifier == "goToToday" {
+            println("today")
+            currentWatchDateIndex = todayDateIndex
+            pushControllerWithName("ItemsIC", context: nil)
+        } else if identifier == "goToTomorrow" {
+            println("tomorrow")
+            currentWatchDateIndex = tomorrowDateIndex
+            pushControllerWithName("ItemsIC", context: nil)
+        }
+        
     }
 
 }

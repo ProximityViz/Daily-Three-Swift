@@ -182,3 +182,13 @@ func markItemDone(index: Int, currentDateIndex: Int, tableView: UITableView?, in
     
 }
 
+// convert "Sunday, February 22" to "February 22"
+func removeDayOfWeek(formattedDate: String) -> String {
+    
+    let dateInfo = formattedDate as String
+    let dateArray = dateInfo.componentsSeparatedByString(", ")
+    let date = dateArray[1]
+    
+    return date
+}
+

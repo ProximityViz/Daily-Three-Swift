@@ -8,7 +8,7 @@
         <!--ItemsIC-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="ItemsIC" customModule="Daily_Three_WatchKit_Extension">
+                <controller identifier="ItemsIC" id="AgC-eL-Hgc" customClass="ItemsIC" customModule="Daily_Three_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Ty5-2G-8f1">
                             <items>
@@ -116,8 +116,8 @@
                                 <imageView alignment="left" image="Watch" id="nFt-GW-lhI"/>
                             </items>
                         </group>
-                        <label alignment="left" text="Today" id="IO0-FC-KF2"/>
-                        <label alignment="left" hidden="YES" text="Label" id="UYE-V1-vcV"/>
+                        <label alignment="left" hidden="YES" id="IO0-FC-KF2"/>
+                        <label alignment="left" text="Today" id="UYE-V1-vcV"/>
                         <label alignment="left" hidden="YES" text="Label" id="WQt-Uz-UF6"/>
                         <group alignment="left" id="uCw-4Q-Ouw">
                             <items>
@@ -157,9 +157,14 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <label width="1" alignment="left" text="Alert Label" textAlignment="center" id="XkS-y5-khE">
+                            <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
+                        <color key="sashColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </notificationCategory>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.87058823529999996" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
@@ -171,7 +176,9 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Daily_Three_WatchKit_App" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Daily_Three_WatchKit_App" customModuleProvider="target">
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.87058823529999996" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </controller>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
