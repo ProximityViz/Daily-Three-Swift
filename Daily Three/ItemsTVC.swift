@@ -31,7 +31,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
         setTitleText()
         
-        showDataForDate(currentDateIndex)
+        currentDateData = getDataForDate(currentDateIndex, listData)
         
         tableView.reloadData()
     
@@ -42,7 +42,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
         tableView.backgroundColor = lightPrimary
         // check that OS is >= 8
-        if (!respondsToSelector("displayModeButtonItem")) {
+        if (splitViewController?.respondsToSelector("displayModeButtonItem") != nil) {
             navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         }
         navigationItem.leftItemsSupplementBackButton = true
@@ -100,16 +100,6 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
     }
     
-    func showDataForDate(dateIndex: Int) {
-        // defensive
-        if (dateIndex < listData.count && dateIndex > -1) {
-            let date = listData[dateIndex]
-            currentDateData = date.dde_tableRepresentation()
-        } else {
-            currentDateData = nil
-        }
-    }
-    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -149,7 +139,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         cell.frame.size.height = 100
         
         listData = ListData.mainData().getDateList()
-        showDataForDate(currentDateIndex)
+        currentDateData = getDataForDate(currentDateIndex, listData)
         
         if let dateData = currentDateData {
             
@@ -182,7 +172,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         listData = ListData.mainData().getDateList()
-        showDataForDate(currentDateIndex)
+        currentDateData = getDataForDate(currentDateIndex, listData)
         currentItemIndex = indexPath.row
         
     }
@@ -193,39 +183,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
             
             tableView.editing = false
             
-            switch indexPath.row {
-                
-            case 0:
-                if (ListData.mainData().getDateList()[currentDateIndex].topDone == true) {
-                    ListData.mainData().getDateList()[currentDateIndex].topDone = false
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
-                } else {
-                    ListData.mainData().getDateList()[currentDateIndex].topDone = true
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
-                }
-                
-            case 1:
-                if (ListData.mainData().getDateList()[currentDateIndex].middleDone == true) {
-                    ListData.mainData().getDateList()[currentDateIndex].middleDone = false
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
-                } else {
-                    ListData.mainData().getDateList()[currentDateIndex].middleDone = true
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
-                }
-                
-            default:
-                if (ListData.mainData().getDateList()[currentDateIndex].bottomDone == true) {
-                    ListData.mainData().getDateList()[currentDateIndex].bottomDone = false
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
-                } else {
-                    ListData.mainData().getDateList()[currentDateIndex].bottomDone = true
-                    tableView.cellForRowAtIndexPath(indexPath)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
-                }
-                
-                
-            }
-            
-            ListData.mainData().setDateList()
+            markItemDone(indexPath.row, currentDateIndex, tableView, indexPath)
             
         }
         

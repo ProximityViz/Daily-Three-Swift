@@ -11,6 +11,14 @@
 		EC1064B91A96BAA1009E8DEC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1064B81A96BAA1009E8DEC /* View.swift */; };
 		EC13A7AC1AA4CD4300B9AD6F /* DatesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */; };
 		EC13B8601A90255E000D9FC6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */; };
+		EC14C2511AC0C59400C9AAFA /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14C2501AC0C59400C9AAFA /* NotificationController.swift */; };
+		EC14C2531AC0C59400C9AAFA /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC14C2521AC0C59400C9AAFA /* GlanceController.swift */; };
+		EC14C2551AC0C59400C9AAFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC14C2541AC0C59400C9AAFA /* Images.xcassets */; };
+		EC14C2591AC0C59400C9AAFA /* Daily Three WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = EC14C2581AC0C59400C9AAFA /* Daily Three WatchKit App.app */; };
+		EC14C2611AC0C59400C9AAFA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC14C25F1AC0C59400C9AAFA /* Interface.storyboard */; };
+		EC14C2631AC0C59400C9AAFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC14C2621AC0C59400C9AAFA /* Images.xcassets */; };
+		EC14C2661AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EC14C2491AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EC3286921AC8C83300DD827B /* ItemIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3286911AC8C83300DD827B /* ItemIC.swift */; };
 		EC3A130A1A8E7ADC00A0EB44 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
 		EC3A13141A8ED6A500A0EB44 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
 		EC3AE0C31ABF525C00D7DA75 /* kastenfrosch__message.caf in Resources */ = {isa = PBXBuildFile; fileRef = EC3AE0C21ABF525C00D7DA75 /* kastenfrosch__message.caf */; };
@@ -22,12 +30,31 @@
 		EC43397F1A884A4C008C0B1B /* NewDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397E1A884A4C008C0B1B /* NewDateVC.swift */; };
 		EC4339811A884A66008C0B1B /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339801A884A66008C0B1B /* ItemsTVC.swift */; };
 		EC4339831A884A7A008C0B1B /* EditItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4339821A884A7A008C0B1B /* EditItemVC.swift */; };
+		EC487B581AC0F6A00032B8A2 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13091A8E7ADC00A0EB44 /* DateData.swift */; };
+		EC487B5B1AC0FFAD0032B8A2 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43397A1A88453B008C0B1B /* ListData.swift */; };
+		EC487B5C1AC0FFC40032B8A2 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */; };
+		EC4C27671AC8AFB200187944 /* DatesIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4C27661AC8AFB200187944 /* DatesIC.swift */; };
 		EC54AEA01A95774700A9A12D /* LPRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54AE9F1A95774700A9A12D /* LPRTableView.swift */; };
+		EC556C791AC0F161005604E6 /* ItemsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC556C781AC0F161005604E6 /* ItemsIC.swift */; };
 		ECAD1D011ABD0B09000208AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAD1D001ABD0B09000208AC /* Main.storyboard */; };
 		ECAD1D051ABDB4A2000208AC /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD1D041ABDB4A2000208AC /* SplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC14C25A1AC0C59400C9AAFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC43394C1A884508008C0B1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC14C2571AC0C59400C9AAFA;
+			remoteInfo = "Daily Three WatchKit App";
+		};
+		EC14C2641AC0C59400C9AAFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC43394C1A884508008C0B1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC14C2481AC0C59400C9AAFA;
+			remoteInfo = "Daily Three WatchKit Extension";
+		};
 		EC43396A1A884508008C0B1B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC43394C1A884508008C0B1B /* Project object */;
@@ -37,11 +64,38 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EC14C26D1AC0C59400C9AAFA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EC14C2661AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EC02EFB21AA636AC00D963EA /* ReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		EC1064B81A96BAA1009E8DEC /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		EC13A7AB1AA4CD4300B9AD6F /* DatesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesTVC.swift; sourceTree = "<group>"; };
 		EC13B85F1A90255E000D9FC6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EC14C2491AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Daily Three WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC14C24C1AC0C59400C9AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC14C24D1AC0C59400C9AAFA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		EC14C2501AC0C59400C9AAFA /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		EC14C2521AC0C59400C9AAFA /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		EC14C2541AC0C59400C9AAFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC14C2581AC0C59400C9AAFA /* Daily Three WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Three WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC14C25E1AC0C59400C9AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC14C2601AC0C59400C9AAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		EC14C2621AC0C59400C9AAFA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC14C26E1AC0C68000C9AAFA /* Daily Three.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Daily Three.entitlements"; sourceTree = "<group>"; };
+		EC14C26F1AC0C6B200C9AAFA /* Daily Three WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Daily Three WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		EC3286911AC8C83300DD827B /* ItemIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemIC.swift; sourceTree = "<group>"; };
 		EC3A13091A8E7ADC00A0EB44 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
 		EC3A13131A8ED6A500A0EB44 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		EC3AE0C21ABF525C00D7DA75 /* kastenfrosch__message.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kastenfrosch__message.caf; sourceTree = "<group>"; };
@@ -57,12 +111,21 @@
 		EC43397E1A884A4C008C0B1B /* NewDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDateVC.swift; sourceTree = "<group>"; };
 		EC4339801A884A66008C0B1B /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
 		EC4339821A884A7A008C0B1B /* EditItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemVC.swift; sourceTree = "<group>"; };
+		EC4C27661AC8AFB200187944 /* DatesIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesIC.swift; sourceTree = "<group>"; };
 		EC54AE9F1A95774700A9A12D /* LPRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPRTableView.swift; sourceTree = "<group>"; };
+		EC556C781AC0F161005604E6 /* ItemsIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsIC.swift; sourceTree = "<group>"; };
 		ECAD1D001ABD0B09000208AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ECAD1D041ABDB4A2000208AC /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EC14C2461AC0C59400C9AAFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC4339511A884508008C0B1B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,11 +152,55 @@
 			name = Aesthetics;
 			sourceTree = "<group>";
 		};
+		EC14C24A1AC0C59400C9AAFA /* Daily Three WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EC14C26F1AC0C6B200C9AAFA /* Daily Three WatchKit Extension.entitlements */,
+				EC4C27661AC8AFB200187944 /* DatesIC.swift */,
+				EC556C781AC0F161005604E6 /* ItemsIC.swift */,
+				EC3286911AC8C83300DD827B /* ItemIC.swift */,
+				EC14C2501AC0C59400C9AAFA /* NotificationController.swift */,
+				EC14C2521AC0C59400C9AAFA /* GlanceController.swift */,
+				EC14C2541AC0C59400C9AAFA /* Images.xcassets */,
+				EC14C24B1AC0C59400C9AAFA /* Supporting Files */,
+			);
+			path = "Daily Three WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		EC14C24B1AC0C59400C9AAFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC14C24C1AC0C59400C9AAFA /* Info.plist */,
+				EC14C24D1AC0C59400C9AAFA /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC14C25C1AC0C59400C9AAFA /* Daily Three WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				EC14C25F1AC0C59400C9AAFA /* Interface.storyboard */,
+				EC14C2621AC0C59400C9AAFA /* Images.xcassets */,
+				EC14C25D1AC0C59400C9AAFA /* Supporting Files */,
+			);
+			path = "Daily Three WatchKit App";
+			sourceTree = "<group>";
+		};
+		EC14C25D1AC0C59400C9AAFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC14C25E1AC0C59400C9AAFA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EC43394B1A884508008C0B1B = {
 			isa = PBXGroup;
 			children = (
 				EC4339561A884508008C0B1B /* Daily Three */,
 				EC43396C1A884508008C0B1B /* Daily ThreeTests */,
+				EC14C24A1AC0C59400C9AAFA /* Daily Three WatchKit Extension */,
+				EC14C25C1AC0C59400C9AAFA /* Daily Three WatchKit App */,
 				EC4339551A884508008C0B1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +210,8 @@
 			children = (
 				EC4339541A884508008C0B1B /* Daily Three.app */,
 				EC4339691A884508008C0B1B /* Daily ThreeTests.xctest */,
+				EC14C2491AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex */,
+				EC14C2581AC0C59400C9AAFA /* Daily Three WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +219,7 @@
 		EC4339561A884508008C0B1B /* Daily Three */ = {
 			isa = PBXGroup;
 			children = (
+				EC14C26E1AC0C68000C9AAFA /* Daily Three.entitlements */,
 				EC54AE9F1A95774700A9A12D /* LPRTableView.swift */,
 				ECAD1D041ABDB4A2000208AC /* SplitViewController.swift */,
 				EC4339791A88452B008C0B1B /* Models */,
@@ -167,6 +277,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EC14C2481AC0C59400C9AAFA /* Daily Three WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC14C26C1AC0C59400C9AAFA /* Build configuration list for PBXNativeTarget "Daily Three WatchKit Extension" */;
+			buildPhases = (
+				EC14C2451AC0C59400C9AAFA /* Sources */,
+				EC14C2461AC0C59400C9AAFA /* Frameworks */,
+				EC14C2471AC0C59400C9AAFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC14C25B1AC0C59400C9AAFA /* PBXTargetDependency */,
+			);
+			name = "Daily Three WatchKit Extension";
+			productName = "Daily Three WatchKit Extension";
+			productReference = EC14C2491AC0C59400C9AAFA /* Daily Three WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		EC14C2571AC0C59400C9AAFA /* Daily Three WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC14C26B1AC0C59400C9AAFA /* Build configuration list for PBXNativeTarget "Daily Three WatchKit App" */;
+			buildPhases = (
+				EC14C2561AC0C59400C9AAFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Daily Three WatchKit App";
+			productName = "Daily Three WatchKit App";
+			productReference = EC14C2581AC0C59400C9AAFA /* Daily Three WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		EC4339531A884508008C0B1B /* Daily Three */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC4339731A884508008C0B1B /* Build configuration list for PBXNativeTarget "Daily Three" */;
@@ -175,10 +318,12 @@
 				EC4339511A884508008C0B1B /* Frameworks */,
 				EC4339521A884508008C0B1B /* Resources */,
 				EC4339841A884C4B008C0B1B /* ShellScript */,
+				EC14C26D1AC0C59400C9AAFA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EC14C2651AC0C59400C9AAFA /* PBXTargetDependency */,
 			);
 			name = "Daily Three";
 			productName = "Daily Three";
@@ -212,9 +357,27 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Proximity Viz LLC";
 				TargetAttributes = {
+					EC14C2481AC0C59400C9AAFA = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 34XFQ7WVN3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					EC14C2571AC0C59400C9AAFA = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 34XFQ7WVN3;
+					};
 					EC4339531A884508008C0B1B = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 34XFQ7WVN3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					EC4339681A884508008C0B1B = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -237,11 +400,31 @@
 			targets = (
 				EC4339531A884508008C0B1B /* Daily Three */,
 				EC4339681A884508008C0B1B /* Daily ThreeTests */,
+				EC14C2481AC0C59400C9AAFA /* Daily Three WatchKit Extension */,
+				EC14C2571AC0C59400C9AAFA /* Daily Three WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC14C2471AC0C59400C9AAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC14C2591AC0C59400C9AAFA /* Daily Three WatchKit App.app in Resources */,
+				EC14C2551AC0C59400C9AAFA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC14C2561AC0C59400C9AAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC14C2611AC0C59400C9AAFA /* Interface.storyboard in Resources */,
+				EC14C2631AC0C59400C9AAFA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC4339521A884508008C0B1B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +462,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EC14C2451AC0C59400C9AAFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC556C791AC0F161005604E6 /* ItemsIC.swift in Sources */,
+				EC487B581AC0F6A00032B8A2 /* DateData.swift in Sources */,
+				EC3286921AC8C83300DD827B /* ItemIC.swift in Sources */,
+				EC14C2511AC0C59400C9AAFA /* NotificationController.swift in Sources */,
+				EC14C2531AC0C59400C9AAFA /* GlanceController.swift in Sources */,
+				EC4C27671AC8AFB200187944 /* DatesIC.swift in Sources */,
+				EC487B5B1AC0FFAD0032B8A2 /* ListData.swift in Sources */,
+				EC487B5C1AC0FFC40032B8A2 /* PersistencyManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC4339501A884508008C0B1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +508,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC14C25B1AC0C59400C9AAFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC14C2571AC0C59400C9AAFA /* Daily Three WatchKit App */;
+			targetProxy = EC14C25A1AC0C59400C9AAFA /* PBXContainerItemProxy */;
+		};
+		EC14C2651AC0C59400C9AAFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC14C2481AC0C59400C9AAFA /* Daily Three WatchKit Extension */;
+			targetProxy = EC14C2641AC0C59400C9AAFA /* PBXContainerItemProxy */;
+		};
 		EC43396B1A884508008C0B1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC4339531A884508008C0B1B /* Daily Three */;
@@ -318,6 +526,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EC14C25F1AC0C59400C9AAFA /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC14C2601AC0C59400C9AAFA /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		EC4339621A884508008C0B1B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -329,6 +545,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EC14C2671AC0C59400C9AAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Daily Three WatchKit Extension/Daily Three WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Daily Three WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EC14C2681AC0C59400C9AAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Daily Three WatchKit Extension/Daily Three WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = "Daily Three WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EC14C2691AC0C59400C9AAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Daily_Three_WatchKit_Extension;
+				INFOPLIST_FILE = "Daily Three WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		EC14C26A1AC0C59400C9AAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				IBSC_MODULE = Daily_Three_WatchKit_Extension;
+				INFOPLIST_FILE = "Daily Three WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		EC4339711A884508008C0B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,8 +697,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Daily Three/Daily Three.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Daily Three/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -427,8 +715,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Daily Three/Daily Three.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Daily Three/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -475,6 +765,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC14C26B1AC0C59400C9AAFA /* Build configuration list for PBXNativeTarget "Daily Three WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC14C2691AC0C59400C9AAFA /* Debug */,
+				EC14C26A1AC0C59400C9AAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC14C26C1AC0C59400C9AAFA /* Build configuration list for PBXNativeTarget "Daily Three WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC14C2671AC0C59400C9AAFA /* Debug */,
+				EC14C2681AC0C59400C9AAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EC43394F1A884508008C0B1B /* Build configuration list for PBXProject "Daily Three" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

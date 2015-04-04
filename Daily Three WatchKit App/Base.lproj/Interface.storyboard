@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="azy-WR-32a">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--ItemsIC-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="ItemsIC" id="AgC-eL-Hgc" customClass="ItemsIC" customModule="Daily_Three_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="Ty5-2G-8f1">
+                            <items>
+                                <tableRow identifier="itemsTRC" id="oHI-Gi-RSJ" customClass="ItemsTRC" customModule="Daily_Three_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="47" alignment="left" radius="0.0" id="inU-oh-pxb">
+                                        <items>
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" numberOfLines="3" minimumScaleFactor="0.5" id="3PX-EL-Xu4">
+                                                <color key="textColor" red="0.74901960784313726" green="0.27843137254901962" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                            <imageView width="30" height="30" alignment="right" verticalAlignment="center" image="Checkmark" id="ONO-Kn-TyI"/>
+                                        </items>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.87058823529411766" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <variation key="device=watch38mm" height="47"/>
+                                        <variation key="device=watch42mm" height="55"/>
+                                        <connections>
+                                            <segue destination="9Kw-Rn-cBj" kind="push" id="ZwB-bJ-eCd"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="itemCompletedImage" destination="ONO-Kn-TyI" id="mcQ-lt-wou"/>
+                                        <outlet property="itemTitleLabel" destination="3PX-EL-Xu4" id="rSA-Z3-BNQ"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" red="0.74901960784313726" green="0.27843137254901962" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="table" destination="Ty5-2G-8f1" id="laa-dG-q5d"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="282" y="347"/>
+        </scene>
+        <!--ItemIC-->
+        <scene sceneID="J71-ZI-PzT">
+            <objects>
+                <controller id="9Kw-Rn-cBj" customClass="ItemIC" customModule="Daily_Three_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="fTx-RA-6ta">
+                            <items>
+                                <label width="1" alignment="left" text="Label" numberOfLines="3" minimumScaleFactor="0.5" id="4Nz-Hd-jeJ">
+                                    <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="6" right="6" top="6" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" id="Kz8-tO-358">
+                            <items>
+                                <label width="1" alignment="left" text="Label" numberOfLines="6" minimumScaleFactor="0.5" id="cVp-nl-5qV">
+                                    <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="6" right="6" top="6" bottom="0.0"/>
+                        </group>
+                        <switch width="1" alignment="center" verticalAlignment="bottom" title="Complete" id="tJc-Xy-cwa">
+                            <color key="titleColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="completeTask:" destination="9Kw-Rn-cBj" id="s3g-cv-MPP"/>
+                            </connections>
+                        </switch>
+                    </items>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.87058823529999996" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="cVp-nl-5qV" id="Pvy-df-m2x"/>
+                        <outlet property="itemCompleteSwitch" destination="tJc-Xy-cwa" id="mXd-ui-lYN"/>
+                        <outlet property="titleLabel" destination="4Nz-Hd-jeJ" id="8Oc-39-dgs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="495" y="345"/>
+        </scene>
+        <!--DatesIC-->
+        <scene sceneID="ypX-YN-6HX">
+            <objects>
+                <controller id="azy-WR-32a" customClass="DatesIC" customModule="Daily_Three_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="uN6-Ip-BQK">
+                            <items>
+                                <tableRow identifier="datesTRC" id="N99-gC-c9S" customClass="DatesTRC" customModule="Daily_Three_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" radius="0.0" id="xPI-rw-sPE">
+                                        <items>
+                                            <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="center" minimumScaleFactor="0.5" id="Ss5-gd-Hbc">
+                                                <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.87058823529411766" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="AgC-eL-Hgc" kind="push" id="fcK-sz-mvl"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dateTitleLabel" destination="Ss5-gd-Hbc" id="ofN-t8-0aL"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="table" destination="uN6-Ip-BQK" id="iDz-RO-c7S"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="70" y="347"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" topTemplateType="groupLeftLarge" id="0uZ-2p-rRc" customClass="GlanceController" customModule="Daily_Three_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="J6Q-On-4xm">
+                            <items>
+                                <imageView alignment="left" image="Watch" id="nFt-GW-lhI"/>
+                            </items>
+                        </group>
+                        <label alignment="left" hidden="YES" id="IO0-FC-KF2"/>
+                        <label alignment="left" text="Today" id="UYE-V1-vcV"/>
+                        <label alignment="left" hidden="YES" text="Label" id="WQt-Uz-UF6"/>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <table alignment="left" id="y9N-kJ-ZTR">
+                                    <items>
+                                        <tableRow identifier="glanceTRC" id="BvN-qC-Nfr" customClass="GlanceTRC" customModule="Daily_Three_WatchKit_Extension">
+                                            <group key="rootItem" width="1" height="35" alignment="left" id="Yz1-Zj-Amk">
+                                                <items>
+                                                    <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" minimumScaleFactor="0.5" id="OWp-b8-1lA">
+                                                        <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </label>
+                                                    <imageView width="30" height="30" alignment="left" verticalAlignment="center" hidden="YES" image="Checkmark" id="iNa-Nl-gQF"/>
+                                                </items>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.87058823529999996" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <variation key="device=watch38mm" height="25"/>
+                                            </group>
+                                            <connections>
+                                                <outlet property="itemCompletedImage" destination="iNa-Nl-gQF" id="B4c-xV-h7r"/>
+                                                <outlet property="itemTitleLabel" destination="OWp-b8-1lA" id="RgC-YD-1aa"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                    <color key="backgroundColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="table" destination="y9N-kJ-ZTR" id="2lq-Ey-cwu"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label width="1" alignment="left" text="Alert Label" textAlignment="center" id="XkS-y5-khE">
+                            <color key="textColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
+                        <color key="sashColor" red="0.74901960779999999" green="0.2784313725" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </notificationCategory>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.87058823529999996" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+    </scenes>
+</document>

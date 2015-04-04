@@ -8,15 +8,13 @@
 
 import UIKit
 
-let defaults = NSUserDefaults.standardUserDefaults()
-
 class PersistencyManager: NSObject {
     
     private var dateList = [DateData]()
     
     func getDateList() -> [DateData] {
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("listData") == nil {
+        if defaults?.objectForKey("listData") == nil {
             // add DateData for today
             addDate(DateData(unformattedDate: NSDate()))
         }

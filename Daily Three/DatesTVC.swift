@@ -55,24 +55,35 @@ class DatesTVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        // format date
+        // label Today, Yesterday, Tomorrow
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
+        
         let today = dateFormatter.stringFromDate(NSDate())
         let yesterday = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: -86400))
         let tomorrow = dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: 86400))
         
-        // switch
+        let yearFormatter = NSDateFormatter()
+        yearFormatter.dateFormat = "yyyy"
+        
         let formattedDate = listData[indexPath.row].formattedDate
-        switch formattedDate {
-        case today:
-            cell.textLabel?.text = "Today, \(removeDayOfWeek(formattedDate))"
-        case yesterday:
-            cell.textLabel?.text = "Yesterday, \(removeDayOfWeek(formattedDate))"
-        case tomorrow:
-            cell.textLabel?.text = "Tomorrow, \(removeDayOfWeek(formattedDate))"
-        default:
-            cell.textLabel?.text = formattedDate
+        let formattedYear = yearFormatter.stringFromDate(listData[indexPath.row].unformattedDate)
+        // see if year and date are the same
+        if yearFormatter.stringFromDate(NSDate()) == formattedYear {
+        
+            switch formattedDate {
+            case today:
+                cell.textLabel?.text = "Today, \(removeDayOfWeek(formattedDate))"
+            case yesterday:
+                cell.textLabel?.text = "Yesterday, \(removeDayOfWeek(formattedDate))"
+            case tomorrow:
+                cell.textLabel?.text = "Tomorrow, \(removeDayOfWeek(formattedDate))"
+            default:
+                cell.textLabel?.text = formattedDate
+            }
+            
+        } else {
+            cell.textLabel?.text = "\(formattedDate), \(formattedYear)"
         }
         
         cell.accessoryView?.frame = CGRectMake(0, 0, 31, 31)
@@ -145,16 +156,6 @@ class DatesTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-    }
-    
-    // convert "Sunday, February 22" to "February 22"
-    func removeDayOfWeek(formattedDate: String) -> String {
-        
-        let dateInfo = formattedDate as String
-        let dateArray = dateInfo.componentsSeparatedByString(", ")
-        let date = dateArray[1]
-        
-        return date
     }
 
 }

@@ -37,8 +37,12 @@ class EditItemVC: UIViewController {
         itemTitle.autocapitalizationType = UITextAutocapitalizationType.Sentences
         itemDetail.autocapitalizationType = UITextAutocapitalizationType.Sentences
 
+        itemTitle.layer.borderWidth = 1
+        itemTitle.layer.borderColor = UIColor(red:0.75, green:0.28, blue:0.04, alpha:1).CGColor
+        itemTitle.layer.cornerRadius = 5
+        itemTitle.clipsToBounds = true
         itemDetail.layer.borderWidth = 1
-        itemDetail.layer.borderColor = UIColor(red:0.9, green:0.9, blue:0.9, alpha:1).CGColor
+        itemDetail.layer.borderColor = UIColor(red:0.75, green:0.28, blue:0.04, alpha:1).CGColor
         itemDetail.layer.cornerRadius = 5
         itemDetail.clipsToBounds = true
         

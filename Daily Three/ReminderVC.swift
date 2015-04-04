@@ -15,7 +15,6 @@ class ReminderVC: UIViewController {
     @IBOutlet weak var notificationTextView: UITextView!
     @IBOutlet weak var timePicker: UIDatePicker!
     
-    let defaults = NSUserDefaults.standardUserDefaults()
     var settings:[String:AnyObject] = [:]
     
     override func viewDidLoad() {
@@ -25,8 +24,8 @@ class ReminderVC: UIViewController {
         // TODO: add observer
         
         // NSUserDefaults
-        if defaults.objectForKey("settings") != nil {
-            settings = defaults.objectForKey("settings") as [String:AnyObject]
+        if defaults?.objectForKey("settings") != nil {
+            settings = defaults?.objectForKey("settings") as [String:AnyObject]
         }
         
         // TODO: if they approve notifications when first launching the app, set notificationOn = true, else set it = false and when they turn it on, set it = true
@@ -93,7 +92,8 @@ class ReminderVC: UIViewController {
         settings["notificationOn"] = reminderSwitch.on
         settings["notificationText"] = notificationTextView.text
         settings["notificationTime"] = timePicker.date
-        defaults.setValue(settings, forKey: "settings")
+        defaults?.setValue(settings, forKey: "settings")
+        defaults?.synchronize()
         
         if reminderSwitch.on == true {
             

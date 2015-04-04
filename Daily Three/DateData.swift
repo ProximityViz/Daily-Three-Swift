@@ -10,6 +10,8 @@
 
 import UIKit
 
+let defaults = NSUserDefaults(suiteName: "group.com.proximityviz.dailyThreeGroup")
+
 extension DateData {
     // date data extension
     func dde_tableRepresentation() -> (titles:[String], details:[String], done:[Bool]) {
@@ -107,15 +109,21 @@ class DateData: NSObject {
 
 func saveDates(dates: [DateData]) {
     
+    // this line needs to be included before archiving or unarchiving when using WatchKit
+    NSKeyedArchiver.setClassName("DateData", forClass: DateData.self)
+    
     let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(dates as NSArray)
-    defaults.setObject(archivedObject, forKey: "listData")
-    defaults.synchronize()
+    defaults?.setObject(archivedObject, forKey: "listData")
+    defaults?.synchronize()
     
 }
 
 func retrieveDates() -> [DateData]? {
     
-    if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("listData") as? NSData {
+    if let unarchivedObject = defaults?.objectForKey("listData") as? NSData {
+        
+        // this line needs to be included before archiving or unarchiving when using WatchKit
+        NSKeyedUnarchiver.setClass(DateData.self, forClassName: "DateData")
         
         return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [DateData]
         
@@ -123,5 +131,64 @@ func retrieveDates() -> [DateData]? {
     
     return nil
     
+}
+
+func getDataForDate(dateIndex: Int, listData: [DateData]) -> (titles:[String], details:[String], done:[Bool]) {
+    
+    // defensive
+    if (dateIndex < listData.count && dateIndex > -1) {
+        let date = listData[dateIndex]
+        return date.dde_tableRepresentation()
+    } else {
+        return ([],[],[])
+    }
+}
+
+func markItemDone(index: Int, currentDateIndex: Int, tableView: UITableView?, indexPath: NSIndexPath?) {
+    
+    switch index {
+        
+    case 0:
+        if (ListData.mainData().getDateList()[currentDateIndex].topDone == true) {
+            ListData.mainData().getDateList()[currentDateIndex].topDone = false
+            tableView?.cellForRowAtIndexPath(indexPath!)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+        } else {
+            ListData.mainData().getDateList()[currentDateIndex].topDone = true
+            tableView?.cellForRowAtIndexPath(indexPath!)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
+        }
+        
+    case 1:
+        if (ListData.mainData().getDateList()[currentDateIndex].middleDone == true) {
+            ListData.mainData().getDateList()[currentDateIndex].middleDone = false
+            tableView?.cellForRowAtIndexPath(indexPath!)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+        } else {
+            ListData.mainData().getDateList()[currentDateIndex].middleDone = true
+            tableView?.cellForRowAtIndexPath(indexPath!)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
+        }
+        
+    default:
+        if (ListData.mainData().getDateList()[currentDateIndex].bottomDone == true) {
+            ListData.mainData().getDateList()[currentDateIndex].bottomDone = false
+            tableView?.cellForRowAtIndexPath(indexPath!)?.accessoryView = UIImageView(image: UIImage(named: "Blank"))
+        } else {
+            ListData.mainData().getDateList()[currentDateIndex].bottomDone = true
+            tableView?.cellForRowAtIndexPath(indexPath!)?.accessoryView = UIImageView(image: UIImage(named: "Checkmark"))
+        }
+        
+        
+    }
+    
+    ListData.mainData().setDateList()
+    
+}
+
+// convert "Sunday, February 22" to "February 22"
+func removeDayOfWeek(formattedDate: String) -> String {
+    
+    let dateInfo = formattedDate as String
+    let dateArray = dateInfo.componentsSeparatedByString(", ")
+    let date = dateArray[1]
+    
+    return date
 }
 
