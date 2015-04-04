@@ -31,6 +31,8 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
         setTitleText()
         
+        println("test")
+        
         currentDateData = getDataForDate(currentDateIndex, listData)
         
         tableView.reloadData()
@@ -46,8 +48,6 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
             navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         }
         navigationItem.leftItemsSupplementBackButton = true
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: "viewDate", object: nil)
         
@@ -77,15 +77,22 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         return false
     }
     
-    func rotated() {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         setTitleText()
         
-        // reset cell height
-        tableView.rowHeight = tableView.frame.size.height / 3
-        tableView.reloadData()
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        
+        if orientation == UIInterfaceOrientation.LandscapeLeft || orientation == UIInterfaceOrientation.LandscapeRight {
+            let tableViewHeight = min(view.frame.height, view.frame.width)
+            return tableViewHeight / 3
+        } else {
+            let tableViewHeight = max(view.frame.height, view.frame.width)
+            return tableViewHeight / 3
+        }
         
     }
+    
     func setTitleText() {
         
         let dateFormatter = NSDateFormatter()
