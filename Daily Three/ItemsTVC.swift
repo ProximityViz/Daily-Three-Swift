@@ -49,6 +49,8 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         }
         navigationItem.leftItemsSupplementBackButton = true
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: "viewDate", object: nil)
         
         navigationController?.navigationBar.translucent = false
@@ -71,26 +73,16 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
     }
     
+    func rotated() {
+        // after rotation, row height gets changed in heightForRowAtIndexPath
+        // but we still need to reload data so the number of rows fot the title and detail are correct
+        tableView.reloadData()
+    }
+    
     // when iPad is in portrait mode, always show both halves of splitview
     func splitViewController(svc: UISplitViewController, shouldHideViewController vc: UIViewController, inOrientation orientation: UIInterfaceOrientation) -> Bool {
         
         return false
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        setTitleText()
-        
-        let orientation = UIApplication.sharedApplication().statusBarOrientation
-        
-        if orientation == UIInterfaceOrientation.LandscapeLeft || orientation == UIInterfaceOrientation.LandscapeRight {
-            let tableViewHeight = min(view.frame.height, view.frame.width)
-            return tableViewHeight / 3
-        } else {
-            let tableViewHeight = max(view.frame.height, view.frame.width)
-            return tableViewHeight / 3
-        }
-        
     }
     
     func setTitleText() {
@@ -173,6 +165,22 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         }
         
         return cell
+        
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        setTitleText()
+        
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+        
+        if orientation == UIInterfaceOrientation.LandscapeLeft || orientation == UIInterfaceOrientation.LandscapeRight {
+            let tableViewHeight = min(view.frame.height, view.frame.width)
+            return tableViewHeight / 3
+        } else {
+            let tableViewHeight = max(view.frame.height, view.frame.width)
+            return tableViewHeight / 3
+        }
         
     }
     
