@@ -25,7 +25,6 @@ class ItemsIC: WKInterfaceController {
         
         if defaults?.objectForKey("settings") != nil {
             let settings = defaults?.objectForKey("settings") as [String:AnyObject]
-            println(settings)
         }
         
         watchListData = ListData.mainData().getDateList()
@@ -60,10 +59,18 @@ class ItemsIC: WKInterfaceController {
             row.itemTitleLabel.setText(item)
             if done[index] {
                 row.itemCompletedImage.setHidden(false)
-                row.itemTitleLabel.setWidth(100)
+                if WKInterfaceDevice.currentDevice().screenBounds.width == 156 {
+                    row.itemTitleLabel.setWidth(100)
+                } else {
+                    row.itemTitleLabel.setWidth(80)
+                }
             } else {
                 row.itemCompletedImage.setHidden(true)
-                row.itemTitleLabel.setWidth(150)
+                if WKInterfaceDevice.currentDevice().screenBounds.width == 156 {
+                    row.itemTitleLabel.setWidth(150)
+                } else { // 136
+                    row.itemTitleLabel.setWidth(130)
+                }
             }
             
         }

@@ -74,7 +74,6 @@ class DatesIC: WKInterfaceController {
                 switch formattedDate {
                 case today:
                     row.dateTitleLabel.setText("Today, \(removeDayOfWeek(formattedDate))")
-                    println(item)
                     todayDateIndex = index
                 case yesterday:
                     row.dateTitleLabel.setText("Yesterday, \(removeDayOfWeek(formattedDate))")
@@ -104,11 +103,9 @@ class DatesIC: WKInterfaceController {
         
         // only send them to today or tomorrow if that day has data
         if identifier == "goToToday" {
-            println("today")
             currentWatchDateIndex = todayDateIndex
             pushControllerWithName("ItemsIC", context: nil)
         } else if identifier == "goToTomorrow" {
-            println("tomorrow")
             currentWatchDateIndex = tomorrowDateIndex
             pushControllerWithName("ItemsIC", context: nil)
         }

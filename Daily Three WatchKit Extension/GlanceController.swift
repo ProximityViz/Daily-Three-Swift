@@ -36,7 +36,6 @@ class GlanceController: WKInterfaceController {
         
         if defaults?.objectForKey("settings") != nil {
             let settings = defaults?.objectForKey("settings") as [String:AnyObject]
-            println(settings)
         }
         
         findDateInData()
@@ -56,8 +55,6 @@ class GlanceController: WKInterfaceController {
         
         listData = ListData.mainData().getDateList()
         
-        println("find date")
-        
         currentDateIndex = 0
         
         for date in listData {
@@ -72,7 +69,6 @@ class GlanceController: WKInterfaceController {
             // see if year and date are the same
             if today == date.formattedDate && yearFormatter.stringFromDate(NSDate()) == yearFormatter.stringFromDate(date.unformattedDate) {
                 currentDateData = date.dde_tableRepresentation()
-                println("today")
                 loadTableData()
                 break
             }
