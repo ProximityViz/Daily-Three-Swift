@@ -23,8 +23,8 @@ class DatesTRC: NSObject {
 class DatesIC: WKInterfaceController {
     
     var watchListData = [DateData]()
-    var todayDateIndex = 0
-    var tomorrowDateIndex = 0
+    var todayDateIndex:Int?
+    var tomorrowDateIndex:Int?
     
     @IBOutlet weak var table: WKInterfaceTable!
 
@@ -102,11 +102,11 @@ class DatesIC: WKInterfaceController {
     override func handleActionWithIdentifier(identifier: String?, forRemoteNotification remoteNotification: [NSObject : AnyObject]) {
         
         // only send them to today or tomorrow if that day has data
-        if identifier == "goToToday" {
-            currentWatchDateIndex = todayDateIndex
+        if identifier == "goToToday" && todayDateIndex != nil {
+            currentWatchDateIndex = todayDateIndex!
             pushControllerWithName("ItemsIC", context: nil)
-        } else if identifier == "goToTomorrow" {
-            currentWatchDateIndex = tomorrowDateIndex
+        } else if identifier == "goToTomorrow" && tomorrowDateIndex != nil {
+            currentWatchDateIndex = tomorrowDateIndex!
             pushControllerWithName("ItemsIC", context: nil)
         }
         
