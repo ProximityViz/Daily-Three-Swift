@@ -26,8 +26,8 @@ class GlanceController: WKInterfaceController {
     var doneItems = [false, false, false]
     
     var listData = [DateData]()
-    var currentDateData : (titles:[String], details:[String], done:[Bool])!
-    var currentDateIndex = 0
+    var currentWatchDateData : (titles:[String], details:[String], done:[Bool])!
+    var currentWatchDateIndex = 0
     
     @IBOutlet weak var table: WKInterfaceTable!
     
@@ -41,7 +41,7 @@ class GlanceController: WKInterfaceController {
         findDateInData()
         
         // handle what should happen if today doesn't have any data
-        if currentDateData == nil {
+        if currentWatchDateData == nil {
             
             ListData.mainData().addDate(DateData(unformattedDate: NSDate()))
             // run again so index is correct
@@ -49,13 +49,15 @@ class GlanceController: WKInterfaceController {
             
         }
         
+        updateUserActivity("com.proximityviz.goToToday", userInfo: ["currentWatchDateIndex":currentWatchDateIndex], webpageURL: nil)
+        
     }
     
     func findDateInData() {
         
         listData = ListData.mainData().getDateList()
         
-        currentDateIndex = 0
+        currentWatchDateIndex = 0
         
         for date in listData {
             
@@ -68,12 +70,12 @@ class GlanceController: WKInterfaceController {
             
             // see if year and date are the same
             if today == date.formattedDate && yearFormatter.stringFromDate(NSDate()) == yearFormatter.stringFromDate(date.unformattedDate) {
-                currentDateData = date.dde_tableRepresentation()
+                currentWatchDateData = date.dde_tableRepresentation()
                 loadTableData()
                 break
             }
             
-            currentDateIndex++
+            currentWatchDateIndex++
             
         }
         
@@ -81,7 +83,7 @@ class GlanceController: WKInterfaceController {
     
     func loadTableData() {
         
-        let (titles, details, done) = currentDateData!
+        let (titles, details, done) = currentWatchDateData!
         
         table.setNumberOfRows(titles.count, withRowType: "glanceTRC")
         

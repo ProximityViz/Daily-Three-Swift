@@ -111,5 +111,15 @@ class DatesIC: WKInterfaceController {
         }
         
     }
+    
+    // handle push from glance
+    override func handleUserActivity(userInfo: [NSObject : AnyObject]!) {
+        
+        if let indexInfo = userInfo["currentWatchDateIndex"] as? Int {
+            currentWatchDateIndex = indexInfo
+            pushControllerWithName("ItemsIC", context: nil)
+        }
+        
+    }
 
 }

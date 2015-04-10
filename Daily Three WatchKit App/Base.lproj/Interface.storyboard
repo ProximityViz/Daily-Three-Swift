@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="azy-WR-32a">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="azy-WR-32a">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
@@ -10,10 +10,10 @@
             <objects>
                 <controller identifier="ItemsIC" id="AgC-eL-Hgc" customClass="ItemsIC" customModule="Daily_Three_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="Ty5-2G-8f1">
+                        <table alignment="center" id="Ty5-2G-8f1">
                             <items>
                                 <tableRow identifier="itemsTRC" id="oHI-Gi-RSJ" customClass="ItemsTRC" customModule="Daily_Three_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="47" alignment="left" radius="0.0" id="inU-oh-pxb">
+                                    <group key="rootItem" width="1" height="48" alignment="left" radius="0.0" id="inU-oh-pxb">
                                         <items>
                                             <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" numberOfLines="3" minimumScaleFactor="0.5" id="3PX-EL-Xu4">
                                                 <color key="textColor" red="0.74901960784313726" green="0.27843137254901962" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -22,8 +22,8 @@
                                             <imageView width="30" height="30" alignment="right" verticalAlignment="center" image="Checkmark" id="ONO-Kn-TyI"/>
                                         </items>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.87058823529411766" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <variation key="device=watch38mm" height="47"/>
-                                        <variation key="device=watch42mm" height="55"/>
+                                        <variation key="device=watch38mm" height="48"/>
+                                        <variation key="device=watch42mm" height="56"/>
                                         <connections>
                                             <segue destination="9Kw-Rn-cBj" kind="push" id="ZwB-bJ-eCd"/>
                                         </connections>
