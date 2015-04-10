@@ -115,7 +115,7 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
         // TODO: make sure that the number of lines for textLabel and detailTextLabel are correct and maximized
         cell.textLabel?.numberOfLines = 2

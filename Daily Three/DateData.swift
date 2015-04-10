@@ -35,18 +35,18 @@ class DateData: NSObject {
     var unformattedDate : NSDate!
     
     required init(coder aDecoder: NSCoder) {
-        done = aDecoder.decodeObjectForKey("done") as Bool
-        topTitle = aDecoder.decodeObjectForKey("topTitle") as String
-        topDetail = aDecoder.decodeObjectForKey("topDetail") as String
-        topDone = aDecoder.decodeObjectForKey("topDone") as Bool
-        middleTitle = aDecoder.decodeObjectForKey("middleTitle") as String
-        middleDetail = aDecoder.decodeObjectForKey("middleDetail") as String
-        middleDone = aDecoder.decodeObjectForKey("middleDone") as Bool
-        bottomTitle = aDecoder.decodeObjectForKey("bottomTitle") as String
-        bottomDetail = aDecoder.decodeObjectForKey("bottomDetail") as String
-        bottomDone = aDecoder.decodeObjectForKey("bottomDone") as Bool
-        formattedDate = aDecoder.decodeObjectForKey("formattedDate") as String
-        unformattedDate = aDecoder.decodeObjectForKey("unformattedDate") as NSDate
+        done = aDecoder.decodeObjectForKey("done") as! Bool
+        topTitle = aDecoder.decodeObjectForKey("topTitle") as! String
+        topDetail = aDecoder.decodeObjectForKey("topDetail") as! String
+        topDone = aDecoder.decodeObjectForKey("topDone") as! Bool
+        middleTitle = aDecoder.decodeObjectForKey("middleTitle") as! String
+        middleDetail = aDecoder.decodeObjectForKey("middleDetail") as! String
+        middleDone = aDecoder.decodeObjectForKey("middleDone") as! Bool
+        bottomTitle = aDecoder.decodeObjectForKey("bottomTitle") as! String
+        bottomDetail = aDecoder.decodeObjectForKey("bottomDetail") as! String
+        bottomDone = aDecoder.decodeObjectForKey("bottomDone") as! Bool
+        formattedDate = aDecoder.decodeObjectForKey("formattedDate") as! String
+        unformattedDate = aDecoder.decodeObjectForKey("unformattedDate") as! NSDate
     }
     
     override init() {

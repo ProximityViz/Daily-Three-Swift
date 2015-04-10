@@ -35,7 +35,7 @@ class GlanceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         if defaults?.objectForKey("settings") != nil {
-            let settings = defaults?.objectForKey("settings") as [String:AnyObject]
+            let settings = defaults?.objectForKey("settings") as! [String:AnyObject]
         }
         
         findDateInData()
@@ -87,7 +87,7 @@ class GlanceController: WKInterfaceController {
         
         for (index, item) in enumerate(titles) {
             
-            let row = table.rowControllerAtIndex(index) as GlanceTRC
+            let row = table.rowControllerAtIndex(index) as! GlanceTRC
             row.itemTitleLabel.setText(item)
             if done[index] {
                 row.itemCompletedImage.setHidden(false)

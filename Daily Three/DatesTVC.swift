@@ -53,7 +53,7 @@ class DatesTVC: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
         // label Today, Yesterday, Tomorrow
         let dateFormatter = NSDateFormatter()
@@ -113,7 +113,7 @@ class DatesTVC: UITableViewController {
         currentDateIndex = indexPath.row
         NSNotificationCenter.defaultCenter().postNotificationName("viewDate", object: currentDateIndex) // reload tableview of ItemsTVC
         
-        let navC = storyboard?.instantiateViewControllerWithIdentifier("itemsNavC") as UINavigationController
+        let navC = storyboard?.instantiateViewControllerWithIdentifier("itemsNavC") as! UINavigationController
         showDetailViewController(navC, sender: self)
         
     }

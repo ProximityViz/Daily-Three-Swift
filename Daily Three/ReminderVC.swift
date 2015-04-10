@@ -25,7 +25,7 @@ class ReminderVC: UIViewController {
         
         // NSUserDefaults
         if defaults?.objectForKey("settings") != nil {
-            settings = defaults?.objectForKey("settings") as [String:AnyObject]
+            settings = defaults?.objectForKey("settings") as! [String:AnyObject]
         }
         
         // TODO: if they approve notifications when first launching the app, set notificationOn = true, else set it = false and when they turn it on, set it = true
@@ -35,13 +35,13 @@ class ReminderVC: UIViewController {
 //         "notificationText":"Remember your Daily Three",
 //         "notificationTime":timePicker.date]
         if settings["notificationOn"] != nil {
-            reminderSwitch.on = settings["notificationOn"] as Bool
+            reminderSwitch.on = settings["notificationOn"] as! Bool
         }
         if settings["notificationTime"] != nil {
-            timePicker.date = settings["notificationTime"] as NSDate
+            timePicker.date = settings["notificationTime"] as! NSDate
         }
         if settings["notificationText"] != nil {
-            notificationTextView.text = settings["notificationText"] as String
+            notificationTextView.text = settings["notificationText"] as! String
         }
         
         navigationController?.navigationBar.translucent = false

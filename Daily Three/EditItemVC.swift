@@ -70,7 +70,7 @@ class EditItemVC: UIViewController {
     }
     
     // minimize keyboard on tap outside
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         view.endEditing(true)
     }
     

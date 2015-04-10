@@ -53,7 +53,7 @@ class DatesIC: WKInterfaceController {
         
         for (index, item) in enumerate(watchListData) {
             
-            let row = table.rowControllerAtIndex(index) as DatesTRC
+            let row = table.rowControllerAtIndex(index) as! DatesTRC
             
             // label Today, Yesterday, Tomorrow
             let dateFormatter = NSDateFormatter()

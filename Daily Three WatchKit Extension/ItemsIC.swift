@@ -24,7 +24,7 @@ class ItemsIC: WKInterfaceController {
         super.awakeWithContext(context)
         
         if defaults?.objectForKey("settings") != nil {
-            let settings = defaults?.objectForKey("settings") as [String:AnyObject]
+            let settings = defaults?.objectForKey("settings") as! [String:AnyObject]
         }
         
         watchListData = ListData.mainData().getDateList()
@@ -55,7 +55,7 @@ class ItemsIC: WKInterfaceController {
         
         for (index, item) in enumerate(titles) {
             
-            let row = table.rowControllerAtIndex(index) as ItemsTRC
+            let row = table.rowControllerAtIndex(index) as! ItemsTRC
             row.itemTitleLabel.setText(item)
             if done[index] {
                 row.itemCompletedImage.setHidden(false)
