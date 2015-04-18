@@ -15,8 +15,20 @@ class PersistencyManager: NSObject {
     func getDateList() -> [DateData] {
         
         if defaults?.objectForKey("listData") == nil {
-            // add DateData for today
-            addDate(DateData(unformattedDate: NSDate()))
+            
+            // check defaults from version 1.2 and earlier
+            let oldDefaults = NSUserDefaults.standardUserDefaults()
+            
+            if let unarchivedObject = oldDefaults.objectForKey("listData") as? NSData {
+                dateList = (NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [DateData])!
+                // save to new defaults
+                saveDates(dateList)
+                
+            } else {
+                // if both standardUserDefaults and app group defaults are empty, add DateData for today
+                addDate(DateData(unformattedDate: NSDate()))
+            }
+            
         }
         dateList = retrieveDates()!
         return dateList

@@ -49,7 +49,7 @@ class GlanceController: WKInterfaceController {
             
         }
         
-        updateUserActivity("com.proximityviz.goToToday", userInfo: ["currentWatchDateIndex":currentWatchDateIndex], webpageURL: nil)
+        updateUserActivity("com.proximityviz.dailythree.goToToday", userInfo: ["currentWatchDateIndex":currentWatchDateIndex], webpageURL: nil)
         
     }
     

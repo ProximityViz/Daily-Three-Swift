@@ -6,11 +6,9 @@
 //  Copyright (c) 2015 Proximity Viz LLC. All rights reserved.
 //
 
-// similar to Album.swift
-
 import UIKit
 
-let defaults = NSUserDefaults(suiteName: "group.com.proximityviz.dailyThreeGroup")
+let defaults = NSUserDefaults(suiteName: "group.com.proximityviz.Daily-Three-Group")
 
 extension DateData {
     // date data extension

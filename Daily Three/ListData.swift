@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Proximity Viz LLC. All rights reserved.
 //
 
-// like LibraryAPI.swift
-
 import UIKit
 
 private let _mainData: ListData = ListData()

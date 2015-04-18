@@ -31,8 +31,6 @@ class ItemsTVC: UITableViewController, LPRTableViewDelegate, UISplitViewControll
         
         setTitleText()
         
-        println("test")
-        
         currentDateData = getDataForDate(currentDateIndex, listData)
         
         tableView.reloadData()

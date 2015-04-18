@@ -22,7 +22,7 @@ class DatesTRC: NSObject {
 
 class DatesIC: WKInterfaceController {
     
-    var watchListData = [DateData]()
+    var watchListData = [DateData]() // FIXME: why is this here and globally above?
     var todayDateIndex:Int?
     var tomorrowDateIndex:Int?
     
